@@ -1,0 +1,71 @@
+xterm*scrollBar: false
+xterm*saveLines: 10000
+xterm*VT100.Translations: #override \
+		Ctrl Shift <Key>V: 	insert-selection(CLIPBOARD) \n\
+		Ctrl Shift <Key>C: 	copy-selection(CLIPBOARD)
+
+XTerm.vt100*allow_bold: true
+XTerm.vt100*faceName: Dejavu Sans Mono
+XTerm*faceSize: 11
+XTerm*renderFont: true
+
+!------------- XTerm Setup ----------------------!
+
+XTerm.termName: xterm-256color
+XTerm.vt100*locale: checkfont
+XTerm.vt100*utf8: 3
+XTerm.vt100*jumpScroll: true
+XTerm.vt100*loginshell: true
+XTerm.vt100*cursorBlink:          false
+XTerm.vt100*cursorColor:          #657b83
+XTerm.vt100*cursorUnderline:      false
+XTerm.vt100*saveLines: 999999999999999999999999
+
+
+!------------- solarized ----------------------!
+XTerm.vt100*background: #002b36
+XTerm.vt100*foreground: #657b83
+XTerm.vt100*fadeColor: #002b36
+XTerm.vt100*pointerColorBackground: #586e75
+XTerm.vt100*pointerColorForeground: #93a1a1
+
+!! black dark/light
+XTerm.vt100*color0: #073642
+XTerm.vt100*color8: #002b36
+
+!! red dark/light
+XTerm.vt100*color1: #dc322f
+XTerm.vt100*color9: #cb4b16
+
+!! green dark/light
+XTerm.vt100*color2: #859900
+XTerm.vt100*color10: #586e75
+
+!! yellow dark/light
+XTerm.vt100*color3: #b58900
+XTerm.vt100*color11: #657b83
+
+!! blue dark/light
+XTerm.vt100*color4: #268bd2
+XTerm.vt100*color12: #839496
+
+!! magenta dark/light
+XTerm.vt100*color5: #d33682
+XTerm.vt100*color13: #6c71c4
+
+!! cyan dark/light
+XTerm.vt100*color6: #2aa198
+XTerm.vt100*color14: #93a1a1
+
+!! white dark/light
+XTerm.vt100*color7: #eee8d5
+XTerm.vt100*color15: #fdf6e3
+
+!!! white color for BOLD TEXT
+!!! green color for ITALICS TEXT
+XTerm.vt100*colorBD: white
+XTerm.vt100*colorIT: green
+
+! mouse curson settings
+XTerm.vt100*theme: whiteglass
+XTerm.vt100*size: 32
