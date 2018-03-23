@@ -17,61 +17,59 @@ XTerm.vt100*utf8: 3
 XTerm.vt100*jumpScroll: true
 XTerm.vt100*loginshell: true
 XTerm.vt100*cursorBlink:          false
-XTerm.vt100*cursorColor:          #657b83
 XTerm.vt100*cursorUnderline:      false
 XTerm.vt100*saveLines: 999999999999999999999999
 
-
-!------------- solarized ----------------------!
-XTerm.vt100*background: #002b36
-XTerm.vt100*foreground: #657b83
-XTerm.vt100*fadeColor: #002b36
 XTerm.vt100*pointerColorBackground: #586e75
 XTerm.vt100*pointerColorForeground: #93a1a1
 
-!! black dark/light
-XTerm.vt100*color0: #073642
-XTerm.vt100*color8: #002b36
+XTerm.vt100*foreground:   #ffeefc
+XTerm.vt100*background:   #141021
+XTerm.vt100*cursorColor:  #c16772
 
-!! red dark/light
-XTerm.vt100*color1: #dc322f
-XTerm.vt100*color9: #cb4b16
+! black
+XTerm.vt100*color0:       #4f4858
+XTerm.vt100*color8:       #545d67
 
-!! green dark/light
-XTerm.vt100*color2: #859900
-XTerm.vt100*color10: #586e75
+! red
+XTerm.vt100*color1:       #c05c47
+XTerm.vt100*color9:       #c16772
 
-!! yellow dark/light
-XTerm.vt100*color3: #b58900
-XTerm.vt100*color11: #657b83
+! green
+XTerm.vt100*color2:       #428e8e
+XTerm.vt100*color10:      #afda6e
 
-!! blue dark/light
-XTerm.vt100*color4: #268bd2
-XTerm.vt100*color12: #839496
+! yellow
+XTerm.vt100*color3:       #e4b226
+XTerm.vt100*color11:      #ebcf1a
 
-!! magenta dark/light
-XTerm.vt100*color5: #d33682
-XTerm.vt100*color13: #6c71c4
+! blue
+XTerm.vt100*color4:       #4457a3
+XTerm.vt100*color12:      #4880a5
 
-!! cyan dark/light
-XTerm.vt100*color6: #2aa198
-XTerm.vt100*color14: #93a1a1
+! magenta
+XTerm.vt100*color5:       #903a62
+XTerm.vt100*color13:      #9568a1
 
-!! white dark/light
-XTerm.vt100*color7: #eee8d5
-XTerm.vt100*color15: #fdf6e3
+! cyan
+XTerm.vt100*color6:       #7aa1dc
+XTerm.vt100*color14:      #abbcda
+
+! white
+XTerm.vt100*color7:       #c4b7c5
+XTerm.vt100*color15:      #ffeefc
 
 !!! white color for BOLD TEXT
 !!! green color for ITALICS TEXT
 XTerm.vt100*colorBD: white
 XTerm.vt100*colorIT: green
 
-! mouse curson settings
+! mouse cursor settings
 XTerm.vt100*theme: whiteglass
 XTerm.vt100*size: 32
 
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!URXVT!!!!!!!!!!!!!!
 
 *.font: xft:DejaVu Sans Mono:size=11
 
@@ -96,40 +94,41 @@ URxvt.internalBorder:           25
 URxvt.perl-ext:	 		default,matcher
 URxvt.matcher.button: 		1
 
-*.background: #002b36
-*.foreground: #657b83
-*.cursorColor: #657b83
-!! black dark/light
-*.color0: #073642
-*.color8: #002b36
+*.foreground:   #ffeefc
+*.background:   #141021
+*.cursorColor:  #c16772
 
-!! red dark/light
-*.color1: #dc322f
-*.color9: #cb4b16
+! black
+*.color0:       #4f4858
+*.color8:       #545d67
 
-!! green dark/light
-*.color2: #859900
-*.color10: #586e75
+! red
+*.color1:       #c05c47
+*.color9:       #c16772
 
-!! yellow dark/light
-*.color3: #b58900
-*.color11: #657b83
+! green
+*.color2:       #428e8e
+*.color10:      #afda6e
 
-!! blue dark/light
-*.color4: #268bd2
-*.color12: #839496
+! yellow
+*.color3:       #e4b226
+*.color11:      #ebcf1a
 
-!! magenta dark/light
-*.color5: #d33682
-*.color13: #6c71c4
+! blue
+*.color4:       #4457a3
+*.color12:      #4880a5
 
-!! cyan dark/light
-*.color6: #2aa198
-*.color14: #93a1a1
+! magenta
+*.color5:       #903a62
+*.color13:      #9568a1
 
-!! white dark/light
-*.color7: #eee8d5
-*.color15: #fdf6e3
+! cyan
+*.color6:       #7aa1dc
+*.color14:      #abbcda
+
+! white
+*.color7:       #c4b7c5
+*.color15:      #ffeefc
 
 
 
@@ -143,4 +142,3 @@ rofi.padding: 50
 rofi.bw: 3
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
-
