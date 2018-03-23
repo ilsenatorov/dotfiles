@@ -52,7 +52,7 @@ alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd
 export BACKUPLOG=/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8
-
+xrdb ~/.Xresources
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
