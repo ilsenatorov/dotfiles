@@ -87,10 +87,8 @@ URxvt*lineSpace:                1
 URxvt.letterSpace:              -1
 URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
-URxvt*geometry:                 65x17
 URxvt.scrollBar:                false
 URxvt*loginShell:               true
-URxvt.internalBorder:           25
 URxvt.perl-ext:	 		default,matcher
 URxvt.matcher.button: 		1
 
