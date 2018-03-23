@@ -1,0 +1,85 @@
+# vim: set ft=conf:
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 1
+    color_good = "{{ green }}"
+    color_degraded = "{{ yellow }}"
+    color_bad = "{{ red }}"
+    color_separator = "#890043"
+}
+
+
+order += "arch_updates"
+# order += "xrandr"
+order += "keyboard_layout"
+order += "ethernet vpn0"
+order += "wireless wlp4s0"
+order += "battery_level"
+order += "volume master"
+order += "time"
+
+arch_updates {
+    format = "pkgs: {pacman}/{aur}"
+    include_aur = 1
+}
+
+
+
+    # force_on_start = "DP-1+DP-2-2"
+    # DP-2-2_pos = "left-of DP-1"
+    # DP-2-2_workspaces = "6: "
+    # DP-1_workspaces = "7: "
+    # fallback = "eDP-1"
+
+    # force_on_start = "eDP1+HDMI2"
+    # HDMI2_pos = "left-of eDP1"
+    # HDMI2_workspaces = "6: ,2: "
+    # fallback = "eDP1"
+
+
+keyboard_layout {
+    format = "⌨ {layout}"
+    on_click 1 = "exec ~/bin/kbtoggle.sh"
+}
+
+ethernet vpn0  {
+    format_up = ": %ip"
+    format_down = ": down"
+}
+
+wireless wlp4s0 {
+    format_up = "  (%essid, %bitrate) %ip"
+    format_down = "W: down"
+}
+
+# battery 0 {
+#     low_threshold = 10
+#     threshold_type = time
+# }
+
+battery_level {
+    # charging_character = "e"
+    charging_character = ""
+    notification = "True"
+    format = "{icon} {percent}%"
+    format_notify_discharging = "{percent}% - {time_remaining}"
+}
+
+volume master {
+    format = " %volume"
+    device = "pulse"
+    mixer = "Master"
+    mixer_idx = 0
+    on_click 1 = "exec pavucontrol"
+    on_click 2 = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    on_click 3 = "exec killall pavucontrol"
+    on_click 4 = "exec pactl set-sink-volume @DEFAULT_SINK@ +1%"
+    on_click 5 = "exec pactl set-sink-volume @DEFAULT_SINK@ -1%"
+}
+
+
+
+time {
+    format = "  %I:%M:%S %Y-%m-%d"
+}
