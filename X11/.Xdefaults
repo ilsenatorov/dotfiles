@@ -69,3 +69,64 @@ XTerm.vt100*colorIT: green
 ! mouse curson settings
 XTerm.vt100*theme: whiteglass
 XTerm.vt100*size: 32
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*.font: xft:DejaVu Sans Mono:size=11
+
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
+
+URxvt*termName:                 rxvt-256color
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+URxvt.internalBorder:           25
+URxvt.perl-ext:	 		default,matcher
+URxvt.matcher.button: 		1
+
+*.background: #002b36
+*.foreground: #657b83
+*.cursorColor: #657b83
+!! black dark/light
+*.color0: #073642
+*.color8: #002b36
+
+!! red dark/light
+*.color1: #dc322f
+*.color9: #cb4b16
+
+!! green dark/light
+*.color2: #859900
+*.color10: #586e75
+
+!! yellow dark/light
+*.color3: #b58900
+*.color11: #657b83
+
+!! blue dark/light
+*.color4: #268bd2
+*.color12: #839496
+
+!! magenta dark/light
+*.color5: #d33682
+*.color13: #6c71c4
+
+!! cyan dark/light
+*.color6: #2aa198
+*.color14: #93a1a1
+
+!! white dark/light
+*.color7: #eee8d5
+*.color15: #fdf6e3
