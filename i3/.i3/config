@@ -28,7 +28,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminal
-bindsym $alt+Ctrl+l exec --no-startup-id blurlock
 bindsym $mod+c exec google-chrome-stable
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -270,7 +269,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id /home/ilya/dotfiles/wallpapers/lock.sh
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
