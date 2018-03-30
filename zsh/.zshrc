@@ -47,8 +47,8 @@ alias whatsbackup="/backup/checklog.py"
 alias cirrus="ssh ilsenato@login.cirrus.ac.uk"
 alias weather="curl wttr.in"
 alias uni="cd /home/ilya/Documents/uni_year3/"
-alias ranger='ranger --confdir=~/dotfiles/ranger'
-alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ranger='ranger -r ~/dotfiles/ranger'
+alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 export BACKUPLOG=/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8

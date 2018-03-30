@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 #! -*- coding: utf-8 -*-
 #
 import subprocess
@@ -81,18 +81,14 @@ status.register("cpu_usage",
     on_leftclick="termite --title=htop -e 'htop'",
     format="CPU {usage}%",)
 
-status.register("mem",
-    color="#FFFFFF",
-    warn_color="#E5E500",
-    alert_color="#FF1919",
-    format="RAM {used_mem}/{total_mem} GB",
-    divisor=1073741824,)
+#status.register("mem",
+#    color="#FFFFFF",
+#    warn_color="#E5E500",
+#    alert_color="#FF1919",
+#    format="RAM {used_mem}/{total_mem} GB")
 
 
 
-    # status.register("text",
-    #     text="|",
-    #     color="#222222")
 status.register("disk",
     color='#FFFFFF',
     path="/",

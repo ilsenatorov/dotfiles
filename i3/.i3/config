@@ -31,7 +31,6 @@ bindsym $mod+Return exec terminal
 bindsym $mod+c exec google-chrome-stable
 # kill focused window
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+n exec terminal jupyter-notebook
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
@@ -283,7 +282,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 10 -locker /home/ilya/dotfiles/wallpapers/lock.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
