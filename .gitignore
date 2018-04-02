@@ -2,3 +2,5 @@ bash/.bash_history
 ranger/history
 ranger/bookmarks
 ranger/tagged
+vim/.vim/swap/
+oh-my-zsh/.oh-my-zsh/cache/
