@@ -276,7 +276,6 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
@@ -318,36 +317,8 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	status_command python ~/.i3/i3status.py
-	position top
-	workspace_buttons yes
 
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-
-    colors {
-        background #283339
-        statusline #F9FAF9
-        separator  #454947
-
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #283339 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-    }
-}
-
-# hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -417,3 +388,7 @@ mode "$mode_gaps_outer" {
 }
 exec --no-startup-id setxkbmap -layout gb,ru -option 'grp:alt_shift_toggle'
 exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
+exec --no-startup-id mkdir /run/media/ilya/SD
+exec --no-startup-id chmod 770 /run/media/ilya/SD
+exec --no-startup-id mount /dev/mmcblk1p1 /run/media/ilya/SD
+exec --no-startup-id polybar example
