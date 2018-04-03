@@ -1,11 +1,35 @@
-#!/bin/bash
-xkb-switch -s gb 
-icon="/home/ilya/dotfiles/wallpapers/lock.png"
-tmpbg='/tmp/screen.png'
+#!/bin/sh
 
-(( $# )) && { icon=$1; }
+B='#00000000'  # blank
+C='#ffffff22'  # clear ish
+D='#903205ff'  # default
+T='#f9b407ff'  # text
+W='#90050aff'  # wrong
+V='#bb6900ff'  # verifying
 
-scrot "$tmpbg"
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
-convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-i3lock -u -i "$tmpbg"
+i3lock \
+--insidevercolor=$C   \
+--ringvercolor=$V     \
+\
+--insidewrongcolor=$C \
+--ringwrongcolor=$W   \
+\
+--insidecolor=$B      \
+--ringcolor=$D        \
+--linecolor=$B        \
+--separatorcolor=$D   \
+\
+--verifcolor=$T        \
+--wrongcolor=$T        \
+--timecolor=$T        \
+--datecolor=$T        \
+--layoutcolor=$T      \
+--keyhlcolor=$W       \
+--bshlcolor=$W        \
+\
+--screen 1            \
+--blur 5              \
+--clock               \
+--indicator           \
+--timestr="%H:%M:%S"  \
+--datestr="%A, %m %Y" \

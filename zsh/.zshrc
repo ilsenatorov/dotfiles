@@ -56,6 +56,8 @@ export BROWSER=/usr/bin/google-chrome-stable
 xrdb ~/.Xresources
 date +"%A %D %T"
 echo "sup"
+(cat ~/.cache/wal/sequences &)
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'

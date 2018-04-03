@@ -2,4 +2,7 @@ syntax on
 set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
+Plug 'dylanaraps/wal.vim'
+call plug#end()
+colorscheme wal
