@@ -168,8 +168,8 @@ battery = BAT1
 adapter = ADP1
 full-at = 98
 time-format = %H:%M
-label-discharging = BAT: %time%
-label-charging = BAT: %time%
+label-discharging = BAT: %time% %percentage%%
+label-charging = BAT: %time% %percentage%%
 format-charging = <label-charging>
 format-charging-underline = #00ff00
 

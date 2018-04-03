@@ -387,7 +387,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 exec --no-startup-id setxkbmap -layout gb,ru -option 'grp:alt_shift_toggle'
-exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
 exec --no-startup-id mkdir /run/media/ilya/SD
 exec --no-startup-id chmod 770 /run/media/ilya/SD
 exec --no-startup-id mount /dev/mmcblk1p1 /run/media/ilya/SD

@@ -91,6 +91,7 @@ URxvt.scrollBar:                false
 URxvt*loginShell:               true
 URxvt.perl-ext:	 		default,matcher
 URxvt.matcher.button: 		1
+URxvt.browser:			google-chrome-stable
 
 *.foreground:   #ffeefc
 *.background:   #141021
@@ -140,3 +141,4 @@ rofi.padding: 50
 rofi.bw: 3
 rofi.separator-style: solid
 rofi.hide-scrollbar: true
+rofi.sensible-browser: google-chrome-stable

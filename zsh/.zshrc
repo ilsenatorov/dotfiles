@@ -52,7 +52,10 @@ alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat 
 export BACKUPLOG=/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8
+export BROWSER=/usr/bin/google-chrome-stable
 xrdb ~/.Xresources
+date +"%A %D %T"
+echo "sup"
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
