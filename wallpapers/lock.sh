@@ -1,11 +1,17 @@
 #!/bin/sh
+source ~/.cache/wal/colors.sh
 
-B='#00000000'  # blank
-C='#ffffff22'  # clear ish
-D='#903205ff'  # default
-T='#f9b407ff'  # text
-W='#90050aff'  # wrong
-V='#bb6900ff'  # verifying
+B=$color2
+B+=22
+C='#ffffff11'  # clear ish
+D=$color3
+D+=ff
+T=$color1
+T+=ff
+W=$color0
+W+=ff
+V=$color12
+V+=ff
 
 i3lock \
 --insidevercolor=$C   \
