@@ -13,6 +13,7 @@
 * Theme creator - [pywal](https://github.com/dylanaraps/pywal)
 * Text Editor - [vim](https://www.vim.org/)
 * Vim plugin manager - [Plug](https://github.com/junegunn/vim-plug)
+* Application launcher - [rofi](https://github.com/DaveDavenport/rofi)
 * Conky
 * Stow
 
