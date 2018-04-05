@@ -53,7 +53,7 @@ export BACKUPLOG=/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
-alias themes="cd /home/ilya/dotfiles/wallpapers"
+alias themes="cd /home/ilya/Pictures/wallpapers; ls"
 xrdb ~/.Xresources
 date +"%A %D %T"
 echo "sup"
