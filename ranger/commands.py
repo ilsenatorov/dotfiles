@@ -46,9 +46,9 @@ class fzf_locate(Command):
     def execute(self):
         import subprocess
         if self.quantifier:
-            command="locate / | fzf -e -i"
+            command="locate / /run/media/ilya/SD | fzf -e -i"
         else:
-            command="locate / | fzf -e -i"
+            command="locate / /run/media/ila/SD | fzf -e -i"
         fzf = self.fm.execute_command(command, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:

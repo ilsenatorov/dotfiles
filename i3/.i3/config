@@ -33,7 +33,7 @@ bindsym $mod+c exec google-chrome-stable
 bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
-
+bindsym $mod+p exec --no-startup-id jupyter-notebook
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id rofi -show run -terminal urxvt
 
@@ -384,8 +384,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 exec --no-startup-id setxkbmap -layout gb,ru -option 'grp:alt_shift_toggle'
+exec --no-startup-id wal -R
 exec --no-startup-id mkdir /run/media/ilya/SD
 exec --no-startup-id chmod 770 /run/media/ilya/SD
 exec --no-startup-id mount /dev/mmcblk1p1 /run/media/ilya/SD
 exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
-exec --no-startup-id wal -R

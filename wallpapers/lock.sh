@@ -3,10 +3,11 @@ source ~/.cache/wal/colors.sh
 
 B=$color2
 B+=22
-C='#ffffff11'  # clear ish
+C=$color3
+C+=77
 D=$color3
 D+=ff
-T=$color1
+T=#ffffff
 T+=ff
 W=$color0
 W+=ff
@@ -20,7 +21,7 @@ i3lock \
 --insidewrongcolor=$C \
 --ringwrongcolor=$W   \
 \
---insidecolor=$B      \
+--insidecolor=$C      \
 --ringcolor=$D        \
 --linecolor=$B        \
 --separatorcolor=$D   \

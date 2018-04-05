@@ -1,6 +1,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH=/home/ilya/.oh-my-zsh
-ZSH_THEME="evan"
+ZSH_THEME="my_theme"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # CASE_SENSITIVE="true"
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -53,6 +53,7 @@ export BACKUPLOG=/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
+alias themes="cd /home/ilya/dotfiles/wallpapers"
 xrdb ~/.Xresources
 date +"%A %D %T"
 echo "sup"
