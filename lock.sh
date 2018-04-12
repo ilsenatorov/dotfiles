@@ -13,7 +13,7 @@ W=$color0
 W+=ff
 V=$color12
 V+=ff
-
+xkb-switch -s us
 i3lock \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
