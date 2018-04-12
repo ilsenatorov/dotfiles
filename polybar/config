@@ -191,7 +191,7 @@ format-full-underline = #00ff00
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
+warn-temperature = 45
 
 format-underline = ${colors.underline}
 label = %temperature-c%
