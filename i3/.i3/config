@@ -180,6 +180,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bar {
         status_command i3status
+	position top
 }
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -387,3 +388,6 @@ exec --no-startup-id wal -R
 #exec --no-startup-id chmod 770 /run/media/ilya/SD
 #exec --no-startup-id mount /dev/mmcblk1p1 /run/media/ilya/SD
 #exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
+exec --no-startup-id autocutsel -fork &
+exec --no-startup-id autocutsel -selection PRIMARY -fork &
+
