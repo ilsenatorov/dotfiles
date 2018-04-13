@@ -26,7 +26,7 @@ export ZSH=/home/ilya/.oh-my-zsh
 export BACKUPLOG=~/dotfiles/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8
-export BROWSER=/usr/bin/google-chrome-stables
+export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
 
 ###Setup
