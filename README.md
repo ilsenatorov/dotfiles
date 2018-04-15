@@ -16,10 +16,11 @@
 * Application launcher - [rofi](https://github.com/DaveDavenport/rofi)
 * Conky
 * Stow
+* Keyboard backlight manager - [msi-keyboard](https://github.com/bparker06/msi-keyboard)
 
 ### Features
 
-* pywal script updates the colors for polybar, vim, terminal, ranger and i3
+* pywal script updates the colors for polybar, vim, terminal, ranger, keyboard and i3
 * polybar underlines change color on events (high temperature or battery charging)
 
 

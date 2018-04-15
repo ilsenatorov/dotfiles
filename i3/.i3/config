@@ -8,7 +8,7 @@ set $alt Mod1
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 0
 new_float normal
 
 # Hide borders
@@ -129,7 +129,7 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
+# If there are multiple satchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
@@ -332,7 +332,7 @@ client.background       $bg
 
 # Set inner/outer gaps
 gaps inner 6
-gaps outer -4
+gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -340,11 +340,11 @@ gaps outer -4
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+#smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -383,11 +383,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 exec --no-startup-id setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
-exec --no-startup-id wal -R
-#exec --no-startup-id mkdir /run/media/ilya/SD
-#exec --no-startup-id chmod 770 /run/media/ilya/SD
-#exec --no-startup-id mount /dev/mmcblk1p1 /run/media/ilya/SD
+exec --no-startup-id wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh
 #exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
 exec --no-startup-id autocutsel -fork &
 exec --no-startup-id autocutsel -selection PRIMARY -fork &
-
+exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable

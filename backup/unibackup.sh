@@ -1,4 +1,5 @@
 #!/bin/bash
+cd /home/ilya/dotfiles/backup
 
 DATE=`date '+%Y/%m/%d %H:%M:%S'`
 echo "" >> ./unilogs.txt
