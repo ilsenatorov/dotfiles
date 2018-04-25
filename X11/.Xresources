@@ -10,6 +10,7 @@ Xft.hintstyle:                  hintslight
 Xft.lcdfilter:                  lcdlight
 Xft.rgba:                       rgb
 
+URxvt*saveLines:		65000
 URxvt*termName:                 rxvt-256color
 URxvt.depth:                    32
 URxvt*lineSpace:                1
@@ -18,9 +19,9 @@ URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
 URxvt.scrollBar:                false
 URxvt*loginShell:               true
-URxvt.perl-ext:	 		default,matcher
-URxvt.matcher.button: 		1
-URxvt.browser:			google-chrome-stable
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 
 *.foreground:   #ffeefc
 *.background:   #141021

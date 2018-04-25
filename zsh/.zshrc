@@ -24,12 +24,14 @@ alias wal='wal -o /home/ilya/dotfiles/keyboard/change_colours.sh'
 
 ### Env
 
+export FONTCONFIG_PATH=/etc/fonts
 export ZSH=/home/ilya/.oh-my-zsh
 export BACKUPLOG=~/dotfiles/backup/shortlog.txt
 export http_proxy=
 export LANG=en_US.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
+export PATH=$PATH:/home/ilya/miniconda3/bin
 
 ###Setup
 
@@ -39,4 +41,3 @@ date +"%A %D %T"
 echo "sup"
 (cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. /home/ilya/miniconda2/etc/profile.d/conda.sh
