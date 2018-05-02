@@ -1,5 +1,3 @@
-
-
 ZSH_THEME="my_theme"
 
 plugins=(
@@ -20,7 +18,7 @@ alias uni="cd /home/ilya/Documents/uni_year3/"
 alias ranger='ranger -r ~/dotfiles/ranger'
 alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias themes='cd ~/Pictures/wallpapers; ls'
-alias wal='wal -o /home/ilya/dotfiles/keyboard/change_colours.sh'
+alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
 
 ### Env
 
@@ -31,7 +29,6 @@ export http_proxy=
 export LANG=en_US.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
-export PATH=$PATH:/home/ilya/miniconda3/bin
 
 ###Setup
 
@@ -41,3 +38,4 @@ date +"%A %D %T"
 echo "sup"
 (cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. /home/ilya/miniconda3/etc/profile.d/conda.sh

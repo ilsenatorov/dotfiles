@@ -183,10 +183,8 @@ bar {
 	position top
 }
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+assign [class="TelegramDesktop"] 7
+assign [class="whatsapp-desktop"] 7
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -216,6 +214,7 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="GLava"] move down; resize width 1920px; resize down height 200px;
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -260,10 +259,10 @@ mode "resize" {
         bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 4 px or 4 ppt
+        bindsym Down resize grow height 4 px or 4 ppt
+        bindsym Up resize shrink height 4 px or 4 ppt
+        bindsym Right resize grow width 4 px or 4 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -384,5 +383,6 @@ mode "$mode_gaps_outer" {
 }
 exec --no-startup-id setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
 exec --no-startup-id wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh
+exec --no-startup-id wal -R
 #exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
 exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
