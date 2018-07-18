@@ -60,7 +60,6 @@ URxvt.matcher.button: 1
 *.color15:      #ffeefc
 
 
-
 ;rofi.color-enabled: true
 ;rofi.color-window: #141021, #c16772, #9568a1
 ;rofi.color-normal: #141021, #ffeefc, #312842, #c16772, #ffeefc

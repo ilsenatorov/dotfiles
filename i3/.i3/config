@@ -35,7 +35,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+p exec --no-startup-id jupyter-notebook
 # launch categorized menu
-bindsym $mod+z exec --no-startup-id rofi -show run -terminal urxvt
+bindsym $mod+z exec --no-startup-id dmenu_run
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -179,7 +179,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bar {
-        status_command /home/ilya/dotfiles/i3/.i3/i3status.py
+        status_command i3status
 	position top
 }
 # Open applications on specific workspaces
@@ -214,7 +214,7 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="GLava"] move down; resize width 1920px; resize down height 200px;
+for_window [class="GLava"] split horizontal move down, resize width 1920px resize shrink down height 240px
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus

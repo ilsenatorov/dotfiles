@@ -19,7 +19,7 @@ alias ranger='ranger -r ~/dotfiles/ranger'
 alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias themes='cd ~/Pictures/wallpapers; ls'
 alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
-
+alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
 ### Env
 
 export FONTCONFIG_PATH=/etc/fonts
@@ -39,3 +39,9 @@ echo "sup"
 (cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /home/ilya/miniconda3/etc/profile.d/conda.sh
+
+PATH="/home/ilya/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ilya/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ilya/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ilya/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ilya/perl5"; export PERL_MM_OPT;
