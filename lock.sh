@@ -35,8 +35,8 @@ i3lock \
 --bshlcolor=$W        \
 \
 --screen 1            \
---blur 5              \
+--blur 8              \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \
---datestr="%A, %m %Y" \
+--datestr="%A, %d %m %Y" \
