@@ -33,7 +33,6 @@ bindsym $mod+c exec google-chrome-stable
 bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+p exec --no-startup-id jupyter-notebook
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id dmenu_run
 
@@ -54,6 +53,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
+bindsym $mod+i exec --no-startup-id 'i3-msg "workspace 7; append_layout /home/ilya/dotfiles/workspace_7.json; exec telegram-desktop; exec Whatsapp; exec google-chrome-stable; exec glava -m radial"'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
@@ -200,8 +200,7 @@ bar {
 	position top
 }
 # Open applications on specific workspaces
-assign [class="TelegramDesktop"] 7
-assign [class="whatsapp-desktop"] 7
+
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -231,7 +230,6 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="GLava"] split horizontal move down, resize width 1920px resize shrink down height 240px
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -294,7 +292,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id clipit
 exec --no-startup-id /home/ilya/dotfiles/conky/start_small_conky.sh
 exec --no-startup-id xautolock -corners ---- -time 10 -locker /home/ilya/dotfiles/lock.sh
 exec_always --no-startup-id ff-theme-util

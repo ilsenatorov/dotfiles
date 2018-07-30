@@ -25,6 +25,11 @@ export http_proxy=
 export LANG=en_US.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
+export KEY_MODELLER='MODELIRANJE'
+export PATH="$PATH:/home/ilya/miniconda3/bin"
+export PYTHONPATH="/home/ilya/bin/modeller9.20/lib/i386-intel8/python3.3"
+export LD_LIBRARY_PATH="/home/ilya/bin/modeller9.20/lib/i386-intel8"
+
 
 ###Setup
 

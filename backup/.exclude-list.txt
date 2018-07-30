@@ -1,19 +1,13 @@
-/dev
+.cache
 
-/proc
+.config/google-chrome
 
-/sys
+.atom
 
-/tmp
+.config/whatsapp-desktop
 
-/run
+.local/share/TelegramDesktop
 
-/mnt
+torch
 
-/media
-
-/lost+found
-
-/home/ilya/.cache/google-chrome
-
-/home/ilya/.config/google-chrome
+nltk-data
