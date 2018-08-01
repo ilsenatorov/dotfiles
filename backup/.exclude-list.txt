@@ -8,6 +8,12 @@
 
 .local/share/TelegramDesktop
 
+.local/share/data/Mendeley Ltd.
+
+.npm/cache
+
 torch
 
-nltk-data
+nltk_data
+
+Projects/CATH_2018/Disorder/individual_fasta

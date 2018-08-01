@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec termite
 bindsym $mod+c exec google-chrome-stable
 # kill focused window
 bindsym $mod+Shift+q kill

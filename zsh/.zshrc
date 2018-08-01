@@ -1,4 +1,4 @@
-ZSH_THEME="my_theme"
+ZSH_THEME="agnoster"
 
 plugins=(
   git
@@ -22,13 +22,15 @@ export FONTCONFIG_PATH=/etc/fonts
 export ZSH=/home/ilya/.oh-my-zsh
 export BACKUPLOG=~/dotfiles/backup/shortlog.txt
 export http_proxy=
-export LANG=en_US.UTF-8
+export LANG=en_GB.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
 export KEY_MODELLER='MODELIRANJE'
 export PATH="$PATH:/home/ilya/miniconda3/bin"
 export PYTHONPATH="/home/ilya/bin/modeller9.20/lib/i386-intel8/python3.3"
 export LD_LIBRARY_PATH="/home/ilya/bin/modeller9.20/lib/i386-intel8"
+export LC_ALL=en_GB.UTF-8
+export TERM=xterm-256color
 
 
 ###Setup
@@ -36,17 +38,7 @@ export LD_LIBRARY_PATH="/home/ilya/bin/modeller9.20/lib/i386-intel8"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 xrdb ~/.Xresources
-date +"%A %D %T"
-echo "sup"
 (cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /home/ilya/miniconda3/etc/profile.d/conda.sh
-
-PATH="/home/ilya/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/ilya/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ilya/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ilya/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ilya/perl5"; export PERL_MM_OPT;
-
-
 . /home/ilya/torch/install/bin/torch-activate
