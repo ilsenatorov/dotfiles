@@ -1,6 +1,6 @@
 !!!!!!!!!!!!URXVT!!!!!!!!!!!!!!
 
-*.font: xft:DejaVu Sans Mono:size=11
+*.font:	Hack 12
 
 Xft.dpi:                        96
 Xft.antialias:                  1
