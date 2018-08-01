@@ -41,4 +41,3 @@ xrdb ~/.Xresources
 (cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /home/ilya/miniconda3/etc/profile.d/conda.sh
-. /home/ilya/torch/install/bin/torch-activate
