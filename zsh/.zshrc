@@ -15,6 +15,7 @@ alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat 
 alias themes='cd ~/Pictures/wallpapers; ls'
 alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
 alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
+alias card='cd /run/media/ilya/SD'
 
 ### Env
 
@@ -35,7 +36,6 @@ export TERM=xterm-256color
 
 ###Setup
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
 xrdb ~/.Xresources
 (cat ~/.cache/wal/sequences &)
