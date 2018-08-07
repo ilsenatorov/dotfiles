@@ -35,9 +35,7 @@ export TERM=xterm-256color
 
 ###Setup
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH/oh-my-zsh.sh
-xrdb ~/.Xresources
 (cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /home/ilya/miniconda3/etc/profile.d/conda.sh

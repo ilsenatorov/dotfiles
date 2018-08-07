@@ -1,0 +1,198 @@
+[colors]
+background = ${xrdb:color0:#222}
+background-alt = #222
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color7:#222}
+underline = ${xrdb:color5:#222}
+
+
+[bar/example]
+width = 100%
+height = 22
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 3
+line-color = #f00
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
+;font-0 = fixed:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+;font-2 = siji:pixelsize=10;1
+font-0 = DejaVu Sans Mono:size=12
+modules-left = i3
+modules-center = root card memory cpu battery temperature
+modules-right = xkeyboard date
+
+tray-position = right
+tray-padding = 2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/powermenu]
+type = custom/menu
+label-open = " power"
+label-open-foreground = ${colors.foreground}
+label-close = "close"
+label-close-foreground = ${colors.foreground}
+label-separator = " | "
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = termite -e 'sudo reboot'
+
+menu-2-0 = power off
+menu-2-0-exec = termite -e 'sudo poweroff'
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.underline}
+
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 1
+
+label-occupied = %index%
+label-occupied-padding = 1
+
+label-urgent = %index%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-mode-padding = 1
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %index%
+label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-underline = ${module/bspwm.label-focused-underline}
+label-focused-padding = ${module/bspwm.label-focused-padding}
+
+label-unfocused = %index%
+label-unfocused-padding = ${module/bspwm.label-occupied-padding}
+
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/root]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted = Root: %percentage_used%%
+format-mounted = <label-mounted>
+format-mounted-underline = ${colors.underline}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-underline = ${colors.underline}
+label = RAM: %percentage_used%%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-underline = ${colors.underline}
+label = CPU: %percentage%%
+
+
+[module/date]
+type = internal/date
+interval = 1
+date-alt = "%A %d/%m/%Y"
+date =
+
+time-alt = %H:%M:%S
+time = %H:%M:%S
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.underline}
+
+label = %time% %date%
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
+poll-interval = 5
+time-format = %H:%M
+label-discharging = BAT: %time% (%percentage%%)
+label-charging = BAT: %percentage%%
+label-full = BAT: %percentage%%
+format-charging = <label-charging>
+format-charging-underline = #ff0000
+
+format-discharging = <label-discharging>
+format-discharging-underline = ${colors.underline}
+
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = #00ff00
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 80
+
+format-underline = ${colors.underline}
+label = %temperature-c%
+label-warn = %temperature-c%
+format-warn-underline = #ff0000
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
