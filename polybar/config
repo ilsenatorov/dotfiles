@@ -24,17 +24,23 @@ module-margin-right = 1
 
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-;font-2 = siji:pixelsize=10;1
-font-0 = DejaVu Sans Mono:size=11
-modules-left = i3
-modules-center = root card memory cpu battery temperature backup
-modules-right = xkeyboard date
+font-2 = siji:pixelsize=10;1
+font-0 = Hack Nerd Font:size=11
+modules-left = powermenu i3
+modules-center = root memory cpu battery temperature backup
+modules-right = xkeyboard date alsa
 
 tray-position = right
 tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+format-underline = ${colors.underline}
 
 [module/backup]
 type = custom/script
@@ -50,9 +56,9 @@ label = %title:0:30:...%
 
 [module/powermenu]
 type = custom/menu
-label-open = " power"
+label-open = "P"
 label-open-foreground = ${colors.foreground}
-label-close = "close"
+label-close = "C"
 label-close-foreground = ${colors.foreground}
 label-separator = " | "
 
