@@ -2,7 +2,6 @@ bash/.bash_history
 ranger/history
 ranger/bookmarks
 ranger/tagged
-/backup/.lastbackup.txt
-/backup/.lastunibackup.txt
-/backup/shortlog.txt
-/backup/unilogs.txt
+/backup/.passphrase
+*.txt
+*.log

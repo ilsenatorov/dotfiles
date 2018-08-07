@@ -11,7 +11,7 @@ underline = ${xrdb:color5:#222}
 
 [bar/example]
 width = 100%
-height = 22
+height = 20
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -25,9 +25,9 @@ module-margin-right = 1
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=10;1
-font-0 = DejaVu Sans Mono:size=12
+font-0 = DejaVu Sans Mono:size=11
 modules-left = i3
-modules-center = root card memory cpu battery temperature
+modules-center = root card memory cpu battery temperature backup
 modules-right = xkeyboard date
 
 tray-position = right
@@ -35,6 +35,14 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/backup]
+type = custom/script
+exec = cat /home/ilya/dotfiles/backup/.lastbackup.txt
+interval = 300
+label = LB: %output%
+format-underline = ${colors.underline}
+
 
 [module/xwindow]
 type = internal/xwindow
