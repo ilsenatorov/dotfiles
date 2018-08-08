@@ -26,7 +26,7 @@ module-margin-right = 1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-0 = Hack Nerd Font:size=11
-modules-left = powermenu i3
+modules-left = i3
 modules-center = root memory cpu battery temperature backup
 modules-right = xkeyboard date pulseaudio
 tray-position = right
@@ -36,18 +36,15 @@ cursor-scroll = ns-resize
 
 
 
+[module/network]
+type = internal/network
+interface = wlp2s0
 
-[module/alsa]
-type = internal/alsa
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
-format-underline = ${colors.underline}
 
 [module/backup]
 type = custom/script
 exec = cat /home/ilya/dotfiles/backup/.lastbackup.txt
-interval = 300
+interval = 60
 label = LB: %output%
 format-underline = ${colors.underline}
 
