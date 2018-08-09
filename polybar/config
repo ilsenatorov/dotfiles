@@ -31,24 +31,32 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 
-[module/networkup]
+[network]
 type = internal/network
 interface = wlp2s0
-udspeed-minwidth = 5
+udspeed-minwidth = 3
+format-connected-underline = ${colors.underline}
+format-disconnected-underline = ${colors.primary}
+
+
+[module/networkup]
+type = ${network.type}
+interface = ${network.interface}
+udspeed-minwidth = ${network.udspeed-minwidth}
 label-connected = Up: %upspeed:3%
 label-disconnected = not connected
-format-connected-underline = ${colors.underline}
-format-disconnected-underline = ${colors.primary}
-
+format-connected-underline = ${network.format-connected-underline}
+format-disconnected-underline = ${network.format-disconnected-underline}
 
 [module/networkdown]
-type = internal/network
-interface = wlp2s0
-udspeed-minwidth = 5
-label-connected = Down: %downspeed:3%
-label-disconnected =
-format-connected-underline = ${colors.underline}
-format-disconnected-underline = ${colors.primary}
+type = ${network.type}
+interface = ${network.interface}
+udspeed-minwidth = ${network.udspeed-minwidth}
+label-connected = Up: %downspeed:3%
+label-disconnected = 
+format-connected-underline = ${network.format-connected-underline}
+format-disconnected-underline = ${network.format-disconnected-underline}
+
 
 
 [module/backup]
@@ -200,7 +208,7 @@ format-full-underline = ${colors.underline}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 80
+warn-temperature = 70
 format-underline = ${colors.underline}
 label = %temperature-c%
 label-warn = %temperature-c%
