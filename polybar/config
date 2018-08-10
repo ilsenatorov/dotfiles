@@ -24,9 +24,9 @@ module-margin-right = 1
 font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=12;1
 font-2 = Materials Icons:size=12
-modules-left = i3
-modules-center = networkdown networkup root memory cpu battery temperature
-modules-right = xkeyboard weather date pulseaudio
+modules-left = i3 backup weather
+modules-center = networkdown networkup root memory cpu battery temperature 
+modules-right = xkeyboard date pulseaudio
 tray-position = right
 tray-padding = 2
 cursor-click = pointer
@@ -37,7 +37,7 @@ type = custom/script
 exec = ~/dotfiles/polybar/openweathermap-forecast.sh
 interval = 600
 label-font = 3
-format-underline = ${colors.underline}
+format-underline = ${colors.primary}
 
 [network]
 type = internal/network
@@ -66,23 +66,22 @@ format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
 
 
-
-
-
 [module/backup]
-type = custom/text
-content = LB
-click-left = cat /home/ilya/dotfiles/backup/.lastbackup.txt
-format-underline = ${colors.underline}
+type = custom/script
+exec = ~/dotfiles/polybar/LB.sh
+tail = true
+click-left = kill -USR1 %pid%
+format-underline = ${colors.primary}
 
 
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
-label-volume =  %percentage%%
+label-volume = %percentage%%
 label-muted = 
 format-muted-underline = ${colors.primary}
 format-volume-underline = ${colors.underline}
+format-muted-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
@@ -188,10 +187,9 @@ label =  %percentage%%
 [module/date]
 type = internal/date
 interval = 1
-date-alt = "%A %d/%m/%Y"
-date =
+date-alt = "%d, %A"
 time-alt = %H:%M:%S
-time =  %H:%M:%S
+time = %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.underline}
 label = %time% %date%
