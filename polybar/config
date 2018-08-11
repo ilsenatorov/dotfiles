@@ -11,81 +11,6 @@ underline = ${xrdb:color5:#222}
 
 [bar/example]
 width = 100%
-<<<<<<< HEAD
-height = 22
-fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 2
-line-color = #f00
-padding-left = 0
-padding-right = 1
-module-margin-left = 0
-module-margin-right = 1
-font-0 = Hack Nerd Font:size=11
-font-1 = Weather Icons:size=11;1
-font-2 = Materials Icons:size=11
-font-3 = Symbola:size=11
-modules-left = i3 backup weather
-modules-center = networkdown networkup root card memory cpu battery temperature
-modules-right = xkeyboard date pulseaudio
-tray-position = right
-tray-padding = 2
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/weather]
-type = custom/script
-exec = ~/dotfiles/polybar/openweathermap-forecast.sh
-interval = 300
-label-font = 3
-format-underline = ${colors.primary}
-
-[network]
-type = internal/network
-interface = wlp2s0
-;udspeed-minwidth = 3
-format-connected-underline = ${colors.underline}
-format-disconnected-underline = ${colors.primary}
-
-
-[module/networkup]
-type = ${network.type}
-interface = ${network.interface}
-;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %upspeed:9:9%
-label-disconnected =  not connected
-format-connected-underline = ${network.format-connected-underline}
-format-disconnected-underline = ${network.format-disconnected-underline}
-
-[module/networkdown]
-type = ${network.type}
-interface = ${network.interface}
-;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %downspeed:9:9%
-label-disconnected =
-format-connected-underline = ${network.format-connected-underline}
-format-disconnected-underline = ${network.format-disconnected-underline}
-
-
-[module/backup]
-type = custom/script
-exec = ~/dotfiles/polybar/LB.sh
-tail = true
-click-left = kill -USR1 %pid%
-format-underline = ${colors.primary}
-
-
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume = <label-volume>
-label-volume = %percentage%%
-label-muted = 
-format-muted-underline = ${colors.primary}
-format-volume-underline = ${colors.underline}
-format-muted-padding = 1
-
-=======
 height = 20
 fixed-center = true
 background = ${colors.background}
@@ -111,21 +36,10 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
->>>>>>> small
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
-<<<<<<< HEAD
-
-[module/powermenu]
-type = custom/menu
-label-open = " P "
-label-open-foreground = ${colors.foreground}
-label-close = " C "
-label-close-foreground = ${colors.foreground}
-label-separator = " | "
-=======
 [module/powermenu]
 type = custom/menu
 label-open = " power"
@@ -134,42 +48,25 @@ label-close = "close"
 label-close-foreground = ${colors.foreground}
 label-separator = " | "
 
->>>>>>> small
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
-<<<<<<< HEAD
-=======
 
->>>>>>> small
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
 menu-1-1-exec = termite -e 'sudo reboot'
-<<<<<<< HEAD
-=======
 
->>>>>>> small
 menu-2-0 = power off
 menu-2-0-exec = termite -e 'sudo poweroff'
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-<<<<<<< HEAD
-format-background = ${colors.secondary}
-=======
 
->>>>>>> small
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-<<<<<<< HEAD
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-label-layout = %layout%
-label-layout-underline = ${colors.underline}
-=======
 
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
@@ -177,7 +74,6 @@ format-prefix-underline = ${colors.secondary}
 label-layout = %layout%
 label-layout-underline = ${colors.underline}
 
->>>>>>> small
 label-indicator-padding = 1
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
@@ -186,21 +82,11 @@ label-indicator-underline = ${colors.secondary}
 
 [module/bspwm]
 type = internal/bspwm
-<<<<<<< HEAD
-=======
 
->>>>>>> small
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 1
-<<<<<<< HEAD
-label-occupied = %index%
-label-occupied-padding = 1
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-=======
 
 label-occupied = %index%
 label-occupied-padding = 1
@@ -209,162 +95,69 @@ label-urgent = %index%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
->>>>>>> small
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 1
 
-<<<<<<< HEAD
-
-=======
->>>>>>> small
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-<<<<<<< HEAD
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-=======
 
 label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
->>>>>>> small
 label-focused = %index%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
-<<<<<<< HEAD
-label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-=======
 
 label-unfocused = %index%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
->>>>>>> small
 label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
-<<<<<<< HEAD
-=======
 
->>>>>>> small
 label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
-<<<<<<< HEAD
-
-=======
->>>>>>> small
 [module/root]
 type = internal/fs
 interval = 25
 mount-0 = /
-<<<<<<< HEAD
-label-mounted =  %percentage_used%%
-format-mounted = <label-mounted>
-format-mounted-underline = ${colors.underline}
-
-
-=======
 label-mounted = Root: %percentage_used%%
 format-mounted = <label-mounted>
 format-mounted-underline = ${colors.underline}
 
->>>>>>> small
 [module/card]
 type = internal/fs
 interval = 25
 mount-0 = /run/media/ilya/SD
-<<<<<<< HEAD
-label-mounted = 💾 %percentage_used%%
-format-mounted = <label-mounted>
-
-format-mounted-underline = ${colors.underline}
-label-font = 3
-=======
 label-mounted = SD: %percentage_used%%
 format-mounted = <label-mounted>
 format-mounted-underline = ${colors.underline}
->>>>>>> small
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-underline = ${colors.underline}
-<<<<<<< HEAD
-label =  %gb_used%
-
-=======
 label = RAM: %percentage_used%%
->>>>>>> small
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-underline = ${colors.underline}
-<<<<<<< HEAD
-label =  %percentage%%
-=======
 label = CPU: %percentage%%
->>>>>>> small
 
 
 [module/date]
 type = internal/date
 interval = 1
-<<<<<<< HEAD
-date-alt = "%d, %A"
-time-alt = %H:%M:%S
-time = %H:%M:%S
-format-prefix-foreground = ${colors.foreground-alt}
-label = %time% %date%
-
-
-[module/battery]
-type = internal/battery
-full-at = 95
-battery = BAT1
-adapter = ADP1
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
-
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = #f53c3c
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
-format-charging-underline = ${colors.alert}
-format-discharging-underline = ${colors.primary}
-format-full-underline = ${colors.underline}
-
-=======
 date-alt = "%A %d/%m/%Y"
 date =
 
@@ -394,35 +187,20 @@ format-discharging-underline = ${colors.underline}
 
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = #00ff00
->>>>>>> small
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-<<<<<<< HEAD
-warn-temperature = 70
-=======
 warn-temperature = 45
 
->>>>>>> small
 format-underline = ${colors.underline}
 label = %temperature-c%
 label-warn = %temperature-c%
 format-warn-underline = #ff0000
 
-<<<<<<< HEAD
-
-[settings]
-screenchange-reload = true
-
-
-[global/wm]
-margin-top = 0
-=======
 [settings]
 screenchange-reload = true
 
 [global/wm]
 margin-top = 5
->>>>>>> small
 margin-bottom = 5
