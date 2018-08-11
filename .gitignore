@@ -5,4 +5,4 @@ ranger/tagged
 /backup/.passphrase
 *.txt
 *.log
-/polybar/.openweathermap_key
+.sensitive

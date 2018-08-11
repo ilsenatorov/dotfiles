@@ -1,5 +1,5 @@
 #!/bin/sh
-source ~/dotfiles/polybar/.openweathermap_key
+source ~/dotfiles/.sensitive
 get_icon() {
     case $1 in
         01d) icon="";;

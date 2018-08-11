@@ -11,21 +11,21 @@ underline = ${xrdb:color5:#222}
 
 [bar/example]
 width = 100%
-height = 20
+height = 22
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 3
+line-size = 2
 line-color = #f00
 padding-left = 0
-padding-right = 2
-module-margin-left = 1
+padding-right = 1
+module-margin-left = 0
 module-margin-right = 1
 font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=12;1
 font-2 = Materials Icons:size=12
 modules-left = i3 backup weather
-modules-center = networkdown networkup root memory cpu battery temperature 
+modules-center = networkdown networkup root memory cpu battery temperature
 modules-right = xkeyboard date pulseaudio
 tray-position = right
 tray-padding = 2
@@ -35,7 +35,7 @@ cursor-scroll = ns-resize
 [module/weather]
 type = custom/script
 exec = ~/dotfiles/polybar/openweathermap-forecast.sh
-interval = 600
+interval = 300
 label-font = 3
 format-underline = ${colors.primary}
 
@@ -61,7 +61,7 @@ type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
 label-connected = %downspeed:9:9%
-label-disconnected = 
+label-disconnected =
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
 
