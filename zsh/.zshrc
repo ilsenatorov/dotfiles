@@ -12,7 +12,7 @@ plugins=(
 
 alias ranger='ranger -r ~/dotfiles/ranger'
 alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias themes='cd ~/Pictures/wallpapers; ls'
+alias themes='cd /run/media/ilya/SD/Pictures/wallpapers; ls'
 alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
 alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
 

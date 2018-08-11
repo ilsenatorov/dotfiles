@@ -22,10 +22,11 @@ padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
 font-0 = Hack Nerd Font:size=11
-font-1 = Weather Icons:size=12;1
-font-2 = Materials Icons:size=12
+font-1 = Weather Icons:size=11;1
+font-2 = Materials Icons:size=11
+font-3 = Symbola:size=11
 modules-left = i3 backup weather
-modules-center = networkdown networkup root memory cpu battery temperature
+modules-center = networkdown networkup root card memory cpu battery temperature
 modules-right = xkeyboard date pulseaudio
 tray-position = right
 tray-padding = 2
@@ -165,10 +166,20 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted =  %used%/%total%
+label-mounted =  %percentage_used%%
 format-mounted = <label-mounted>
 format-mounted-underline = ${colors.underline}
 
+
+[module/card]
+type = internal/fs
+interval = 25
+mount-0 = /run/media/ilya/SD
+label-mounted = 💾 %percentage_used%%
+format-mounted = <label-mounted>
+
+format-mounted-underline = ${colors.underline}
+label-font = 3
 
 [module/memory]
 type = internal/memory
@@ -191,25 +202,43 @@ date-alt = "%d, %A"
 time-alt = %H:%M:%S
 time = %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.underline}
 label = %time% %date%
 
 
 [module/battery]
 type = internal/battery
+full-at = 95
 battery = BAT1
 adapter = ADP1
-full-at = 95
-poll-interval = 5
-time-format = %H:%M
-label-discharging =  %time% (%percentage%%)
-label-charging =  %percentage%%
-label-full =  %percentage%%
-format-charging = <label-charging>
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 format-charging-underline = ${colors.alert}
-format-discharging = <label-discharging>
 format-discharging-underline = ${colors.primary}
-format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.underline}
 
 

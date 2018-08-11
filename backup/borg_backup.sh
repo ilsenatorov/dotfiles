@@ -1,10 +1,10 @@
 #!/bin/sh
-export BORG_PASSCOMMAND='cat /home/ilya/dotfiles/backup/.passphrase'
+source /home/ilya/dotfiles/.sensitive
 BORG_OPTS="--stats --one-file-system --compression lz4 --checkpoint-interval 86400"
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=no
 export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no
 DATE=$(date +'%y-%m-%d_%a_%H:%M:%S')-$(hostname)
-TARGET=pi:/mnt/backups/big
+TARGET=pi:/mnt/backups/small
 
 borg create $BORG_OPTS \
   --exclude /root/.cache \

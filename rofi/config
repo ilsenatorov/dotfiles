@@ -1,0 +1,19 @@
+rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
+
+rofi.color-enabled: true
+! rofi.color-window: argb:df292d37, #292d37, #17a086
+! rofi.color-normal: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #17a086
+! rofi.color-active: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #ffffff
+! rofi.color-urgent: argb:00292d37, #ffffff, argb:00292d37, argb:00292d37, #ffffff
+
+rofi.font: Hack 12
+rofi.eh: 1
+rofi.line-margin: 18
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
+rofi.lines: 9
+rofi.columns: 1
+rofi.width: 700
+rofi.padding: 100
+rofi.bw: 0
+rofi.auto-select: false
