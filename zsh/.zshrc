@@ -15,6 +15,7 @@ alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat 
 alias themes='cd /run/media/ilya/SD/Pictures/wallpapers; ls'
 alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
 alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
+alias card='cd /run/media/ilya/SD'
 
 ### Env
 
