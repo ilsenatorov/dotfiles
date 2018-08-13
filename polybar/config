@@ -203,6 +203,7 @@ time-alt = %H:%M:%S
 time = %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
 label = %time% %date%
+format-underline = ${colors.underline}
 
 
 [module/battery]
@@ -210,17 +211,16 @@ type = internal/battery
 full-at = 95
 battery = BAT1
 adapter = ADP1
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
+format-full = <label-full>
 time-format = %H:%M
 label-discharging = %time% %percentage%%
-label-chargin = %percentage%%
+label-charging =  %percentage%%
+label-full =  %percentage%%
 
 ramp-capacity-0 = 
-ramp-capacity-0-foreground = #f53c3c
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
@@ -234,12 +234,6 @@ bar-capacity-empty = █
 bar-capacity-empty-font = 3
 bar-capacity-empty-foreground = #44ffffff
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
 format-charging-underline = ${colors.alert}
 format-discharging-underline = ${colors.primary}
 format-full-underline = ${colors.underline}
