@@ -15,7 +15,8 @@ else
     THEMES=$@
     if [ x"current" = x"${THEMES}" ]
     then
-        wal -i `cat ~/.cache/wal/wal` > /dev/null
+        exit 0
+        #wal -i `cat ~/.cache/wal/wal` > /dev/null
     elif [ -n "${THEMES}" ]
     then
         wal -i $WALLPAPERDIR${THEMES} > /dev/null
