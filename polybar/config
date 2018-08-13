@@ -24,6 +24,7 @@ module-margin-right = 1
 font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=12;1
 font-2 = Materials Icons:size=12
+font-3 = Symbola:size=12
 modules-left = i3 backup weather ping-pi
 modules-center = networkdown networkup root memory cpu battery temperature 
 modules-right = xkeyboard date pulseaudio
@@ -212,7 +213,7 @@ poll-interval = 5
 time-format = %H:%M
 label-discharging =  %time% (%percentage%%)
 label-charging =  %percentage%%
-label-full =  %percentage%%
+label-full = 🔌 %percentage%%
 format-charging = <label-charging>
 format-charging-underline = ${colors.alert}
 format-discharging = <label-discharging>
