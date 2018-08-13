@@ -32,7 +32,8 @@ bindsym $mod+c exec google-chrome-stable
 # kill focused window
 bindsym $mod+Shift+q kill
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id rofi -show 
+bindsym $mod+t exec --no-startup-id rofi  -show themes -modi themes:~/dotfiles/rofi/themeswitch.sh
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id dmenu_run
 
@@ -60,7 +61,7 @@ bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill compton
+bindsym $mod+Shift+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
