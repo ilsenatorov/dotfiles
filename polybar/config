@@ -206,20 +206,37 @@ label = %time% %date%
 
 [module/battery]
 type = internal/battery
+full-at = 95
 battery = BAT1
 adapter = ADP1
-full-at = 95
-poll-interval = 5
+format-charging = <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
 time-format = %H:%M
-label-discharging =  %time% (%percentage%%)
+label-discharging = %time% %percentage%%
 label-charging =  %percentage%%
 label-full = 🔌 %percentage%%
-format-charging = <label-charging>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
 format-charging-underline = ${colors.alert}
-format-discharging = <label-discharging>
 format-discharging-underline = ${colors.primary}
-format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${colors.underline}
+
+
 
 
 [module/temperature]
