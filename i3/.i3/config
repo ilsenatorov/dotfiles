@@ -32,8 +32,10 @@ bindsym $mod+c exec google-chrome-stable
 # kill focused window
 bindsym $mod+Shift+q kill
 # start program launcher
-bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show run"
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
+bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
+
 #bindsym $mod+z exec --no-startup-id dmenu_run
 
 ################################################################################################
@@ -396,3 +398,4 @@ exec --no-startup-id wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh
 exec --no-startup-id wal -R
 exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
 exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
+exec --no-startup-id compton -b

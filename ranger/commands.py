@@ -1,5 +1,11 @@
-from ranger.api.commands import Command
+from ranger.api.commands import Command, LinemodeBase
+import ranger
 import os
+import ranger.api
+import ranger.core.linemode
+
+import subprocess
+import json
 # https://github.com/ranger/ranger/wiki/Integrating-File-Search-with-fzf
 # Now, simply bind this function to a key, by adding this to your ~/.config/ranger/rc.conf: map <C-f> fzf_select
 # fzf_locate
@@ -66,3 +72,4 @@ class gdrive(Command):
         file = self.fm.thisfile
         self.fm.run("gdrive upload \"{0}\" {1}".format(file.basename, self.rest(1)))
         self.fm.notify('Done!')
+
