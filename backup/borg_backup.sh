@@ -1,5 +1,5 @@
 #!/bin/sh
-export BORG_PASSCOMMAND='cat /home/ilya/dotfiles/backup/.passphrase'
+source /home/ilya/dotfiles/.sensitive
 BORG_OPTS="--stats --one-file-system --compression lz4 --checkpoint-interval 86400"
 export BORG_RELOCATED_REPO_ACCESS_IS_OK=no
 export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no

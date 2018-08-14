@@ -2,7 +2,6 @@ bash/.bash_history
 ranger/history
 ranger/bookmarks
 ranger/tagged
-/backup/.passphrase
 *.txt
 *.log
-/polybar/.openweathermap_key
+.sensitive
