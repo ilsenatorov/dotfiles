@@ -1,11 +1,25 @@
 #!/usr/bin/python3
+'''
+Module for outputting lastfm scrobbling to polybar
+'''
 import requests
 import time
 import os
+import re
+
+def parse_song_name(song_name):
+    '''
+    Used to remove feats and extra long info after brackets
+    '''
+    if '(' in song_name or '[' in song_name:
+        return re.split(r'\[|\(', song_name)[0].rstrip(' ')+' ...'
+
+    else:
+        return song_name
 
 class NowPlaying(object):
     '''
-    Prints song played on lastfm account every 5 seconds, used for polybar.
+    Prints song played on lastfm account every 5 seconds, used for polybar
     '''
     def __init__(self, API_KEY, USER):
         '''
@@ -20,7 +34,7 @@ class NowPlaying(object):
         'limit':      '1',
         'nowplaying': 'true',
         'user':       USER}
-        
+
     def get_song_json(self):
         '''
         Creates local variable track with all info from the song
@@ -32,7 +46,7 @@ class NowPlaying(object):
         '''
         Prints the output as string
         '''
-        print('🎧 %s - %s' % (self.track['artist']['#text'], self.track['name']), flush=True)
+        print('🎧 %s - %s' % (self.track['artist']['#text'], parse_song_name( self.track['name'])), flush=True)
 
     def run(self):
         '''
@@ -45,7 +59,6 @@ class NowPlaying(object):
             except:
                 print('Error', flush=True)
             time.sleep(5)
-
 
 if __name__ == "__main__":
     C = NowPlaying(os.environ['LASTFM_API'], os.environ['LASTFM_USER'])

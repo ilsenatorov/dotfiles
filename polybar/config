@@ -41,6 +41,7 @@ tail = true
 label = %output:0:50%
 label-underline = ${colors.underline}
 
+
 [module/ping-pi]
 type = custom/script
 exec = ~/dotfiles/polybar/ping-pi.sh
@@ -69,7 +70,7 @@ format-disconnected-underline = ${colors.primary}
 type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %upspeed:9:9%
+label-connected = %upspeed:8:8%
 label-disconnected =  not connected
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
@@ -79,7 +80,7 @@ format-disconnected-underline = ${network.format-disconnected-underline}
 type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %downspeed:9:9%
+label-connected = %downspeed:8:8%
 label-disconnected = 
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
@@ -96,7 +97,7 @@ format-underline = ${colors.primary}
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
-label-volume = %percentage%%
+label-volume = 🔊 %percentage%%
 label-muted = 
 format-muted-underline = ${colors.primary}
 format-volume-underline = ${colors.underline}
