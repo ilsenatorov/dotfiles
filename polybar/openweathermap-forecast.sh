@@ -24,7 +24,7 @@ get_icon() {
     echo $icon
 }
 
-KEY=$API_KEY
+KEY=$WEATHER_API_KEY
 CITY=""
 UNITS="metric"
 SYMBOL="°"

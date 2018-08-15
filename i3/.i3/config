@@ -15,9 +15,9 @@ new_float normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+bindsym $mod+Shift+u border none
+bindsym $mod+Shidt+y border pixel 1
+bindsym $mod+Shift+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -35,6 +35,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show run"
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
 bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
+bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
 
 #bindsym $mod+z exec --no-startup-id dmenu_run
 
@@ -55,20 +56,14 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+i exec --no-startup-id 'i3-msg "workspace 7; append_layout /home/ilya/dotfiles/workspace_7.json; exec telegram-desktop; exec Whatsapp; exec google-chrome-stable; exec glava -m radial"'
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
-bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
-bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+Shift+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -159,14 +154,23 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 7
-set $ws8 8
+# set $ws1 1
+# set $ws2 2
+# set $ws3 3
+# set $ws4 4
+# set $ws5 5
+# set $ws6 6
+# set $ws7 7
+# set $ws8 8
+
+set $ws1 1:🌍
+set $ws2 2:💻
+set $ws3 3:📁
+set $ws4 4:📷
+set $ws5 5:📖
+set $ws6 6:⇄
+set $ws7 7:♬
+set $ws8 8:♻️
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1

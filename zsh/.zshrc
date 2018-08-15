@@ -15,6 +15,7 @@ alias r='ranger -r ~/dotfiles/ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat 
 alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
 alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
 
+
 ### Env
 
 export FONTCONFIG_PATH=/etc/fonts
