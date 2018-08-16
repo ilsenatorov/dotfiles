@@ -1,6 +1,6 @@
 #!/bin/sh
+source /home/ilya/dotfiles/.sensitive
 BACKUPDIR=/home/ilya/dotfiles/backup
-export BORG_PASSCOMMAND='cat /home/ilya/dotfiles/backup/.passphrase'
 TARGET='pi:/mnt/backups/big'
 LIST=$(borg list $TARGET)
 echo $LIST > $BACKUPDIR/borg.log

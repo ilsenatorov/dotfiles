@@ -12,7 +12,7 @@ def parse_song_name(song_name):
     Used to remove feats and extra long info after brackets
     '''
     if '(' in song_name or '[' in song_name:
-        return re.split(r'\[|\(', song_name)[0].rstrip(' ')+' ...'
+        return re.split(r'\[|\(|\+|\.', song_name)[0].rstrip(' ')+'...'
 
     else:
         return song_name
