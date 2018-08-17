@@ -28,7 +28,7 @@ font-3 = Symbola:size=11
 modules-left = i3 backup weather
 modules-center = networkdown networkup root card memory cpu battery temperature
 modules-right = xkeyboard date pulseaudio
-tray-position = right
+tray-position = none
 tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
