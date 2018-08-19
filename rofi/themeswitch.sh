@@ -19,6 +19,6 @@ else
         #wal -i `cat ~/.cache/wal/wal` > /dev/null
     elif [ -n "${THEMES}" ]
     then
-        wal -i $WALLPAPERDIR${THEMES} > /dev/null
+        wal -o /home/ilya/dotfiles/colorchange.sh -i $WALLPAPERDIR${THEMES} > /dev/null
     fi
 fi
