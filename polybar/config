@@ -33,114 +33,7 @@ tray-padding = 0
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-
-[module/lastfm]
-type = custom/script
-exec = ~/dotfiles/polybar/lastfm.sh
-tail = true
-click-left = kill -USR1 %pid%
-format-underline = ${colors.underline}
-
-
-[module/ping-pi]
-type = custom/script
-exec = ~/dotfiles/polybar/ping-pi.sh
-interval = 10
-label = π: %output%
-format-underline = ${colors.primary}
-
-
-[module/weather]
-type = custom/script
-exec = ~/dotfiles/polybar/openweathermap-forecast.sh
-interval = 600
-label-font = 3
-format-underline = ${colors.primary}
-
-
-[network]
-type = internal/network
-interface = wlp2s0
-;udspeed-minwidth = 3
-format-connected-underline = ${colors.underline}
-format-disconnected-underline = ${colors.primary}
-
-
-[module/networkup]
-type = ${network.type}
-interface = ${network.interface}
-;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %upspeed:8:8%
-label-disconnected =  not connected
-format-connected-underline = ${network.format-connected-underline}
-format-disconnected-underline = ${network.format-disconnected-underline}
-
-
-[module/networkdown]
-type = ${network.type}
-interface = ${network.interface}
-;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %downspeed:8:8%
-label-disconnected = 
-format-connected-underline = ${network.format-connected-underline}
-format-disconnected-underline = ${network.format-disconnected-underline}
-
-
-[module/backup]
-type = custom/script
-exec = ~/dotfiles/polybar/LB.sh
-tail = true
-click-left = kill -USR1 %pid%
-format-underline = ${colors.primary}
-
-
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume = <label-volume>
-label-volume = 🔊 %percentage%%
-label-muted = 
-format-muted-underline = ${colors.primary}
-format-volume-underline = ${colors.underline}
-format-muted-padding = 1
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-
-[module/powermenu]
-type = custom/menu
-label-open = " P "
-label-open-foreground = ${colors.foreground}
-label-close = " C "
-label-close-foreground = ${colors.foreground}
-label-separator = " | "
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = termite -e 'sudo reboot'
-menu-2-0 = power off
-menu-2-0-exec = termite -e 'sudo poweroff'
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-format-background = ${colors.secondary}
-
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-label-layout = %layout%
-label-layout-underline = ${colors.underline}
-label-indicator-padding = 1
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+;;;;;;;;;;;;;;;LEFT;;;;;;;;;;;;;;;;;;
 
 
 [module/i3]
@@ -168,6 +61,61 @@ label-visible-padding = 1
 label-font = 3
 
 
+[module/backup]
+type = custom/script
+exec = ~/dotfiles/polybar/LB.sh
+tail = true
+click-left = kill -USR1 %pid%
+format-underline = ${colors.primary}
+
+
+[module/weather]
+type = custom/script
+exec = ~/dotfiles/polybar/openweathermap-forecast.sh
+interval = 600
+label-font = 3
+format-underline = ${colors.primary}
+
+
+[module/ping-pi]
+type = custom/script
+exec = ~/dotfiles/polybar/ping-pi.sh
+interval = 10
+label = π: %output%
+format-underline = ${colors.primary}
+
+
+;;;;;;;;;;;;;;;;;;;;;;CENTER;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[network]
+type = internal/network
+interface = wlp2s0
+;udspeed-minwidth = 3
+format-connected-underline = ${colors.underline}
+format-disconnected-underline = ${colors.primary}
+
+
+[module/networkdown]
+type = ${network.type}
+interface = ${network.interface}
+;udspeed-minwidth = ${network.udspeed-minwidth}
+label-connected = %downspeed:8:8%
+label-disconnected = 
+format-connected-underline = ${network.format-connected-underline}
+format-disconnected-underline = ${network.format-disconnected-underline}
+
+
+[module/networkup]
+type = ${network.type}
+interface = ${network.interface}
+;udspeed-minwidth = ${network.udspeed-minwidth}
+label-connected = %upspeed:8:8%
+label-disconnected =  not connected
+format-connected-underline = ${network.format-connected-underline}
+format-disconnected-underline = ${network.format-disconnected-underline}
+
+
 [module/root]
 type = internal/fs
 interval = 25
@@ -189,17 +137,6 @@ type = internal/cpu
 interval = 2
 format-underline = ${colors.underline}
 label =  %percentage%%
-
-
-[module/date]
-type = internal/date
-interval = 1
-date-alt = "%d, %A"
-time-alt = %H:%M:%S
-time = %H:%M:%S
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.underline}
-label = %time% %date%
 
 
 [module/battery]
@@ -240,6 +177,81 @@ format-underline = ${colors.underline}
 label = %temperature-c%
 label-warn = %temperature-c%
 format-warn-underline = #ff0000
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;RIGHT;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[module/lastfm]
+type = custom/script
+exec = ~/dotfiles/polybar/lastfm.sh
+tail = true
+click-left = kill -USR1 %pid%
+format-underline = ${colors.underline}
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+label-layout = %layout%
+label-layout-underline = ${colors.underline}
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+
+[module/date]
+type = internal/date
+interval = 1
+date-alt = "%d, %A"
+time-alt = %H:%M:%S
+time = %H:%M:%S
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.underline}
+label = %time% %date%
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume>
+label-volume = 🔊 %percentage%%
+label-muted = 
+format-muted-underline = ${colors.primary}
+format-volume-underline = ${colors.underline}
+format-muted-padding = 1
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+
+[module/powermenu]
+type = custom/menu
+label-open = " P "
+label-open-foreground = ${colors.foreground}
+label-close = " C "
+label-close-foreground = ${colors.foreground}
+label-separator = " | "
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = termite -e 'sudo reboot'
+menu-2-0 = power off
+menu-2-0-exec = termite -e 'sudo poweroff'
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+format-background = ${colors.secondary}
 
 
 [settings]
