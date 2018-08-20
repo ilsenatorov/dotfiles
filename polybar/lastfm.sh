@@ -10,6 +10,6 @@ while true; do
     else
         /home/ilya/dotfiles/polybar/lastfm.py
     fi
-    sleep 1 &
+    sleep 5 &
     wait
 done

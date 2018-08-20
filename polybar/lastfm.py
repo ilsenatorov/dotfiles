@@ -6,6 +6,7 @@ import requests
 import time
 import os
 import re
+import argparse
 
 def parse_song_name(song_name):
     '''
@@ -61,5 +62,13 @@ class NowPlaying(object):
             time.sleep(5)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
+    parser.add_argument("-c", help="run constantly", action="store_true")
+    args = parser.parse_args()
     C = NowPlaying(os.environ['LASTFM_API'], os.environ['LASTFM_USER'])
-    C.run()
+    if args.c:
+        C.run()
+    else:
+        C.get_song_json()
+        C.print_string()
+

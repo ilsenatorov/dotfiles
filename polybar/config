@@ -39,7 +39,7 @@ type = custom/script
 exec = ~/dotfiles/polybar/lastfm.sh
 tail = true
 click-left = kill -USR1 %pid%
-format-underline = ${colors.primary}
+format-underline = ${colors.underline}
 
 
 [module/ping-pi]
@@ -204,7 +204,7 @@ label = %time% %date%
 
 [module/battery]
 type = internal/battery
-full-at = 93
+full-at = 90
 battery = BAT1
 adapter = ADP1
 format-charging = <label-charging>
