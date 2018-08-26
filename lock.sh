@@ -1,6 +1,7 @@
 #!/bin/sh
 source ~/.cache/wal/colors.sh
-
+scrot /tmp/lock.png
+convert -scale 5% -scale 2000% /tmp/lock.png /tmp/lock.png
 B=$color2
 B+=22
 C=$color3
@@ -14,7 +15,7 @@ W+=ff
 V=$color12
 V+=ff
 xkb-switch -s us
-i3lock \
+i3lock -i /tmp/lock.png \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
 \
@@ -35,7 +36,6 @@ i3lock \
 --bshlcolor=$W        \
 \
 --screen 1            \
---blur 8              \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \

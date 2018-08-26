@@ -174,7 +174,7 @@ format-mounted-underline = ${colors.underline}
 [module/card]
 type = internal/fs
 interval = 25
-mount-0 = /run/media/ilya/SD
+mount-0 = /mnt/SD
 label-mounted = 💾 %percentage_used%%
 format-mounted = <label-mounted>
 

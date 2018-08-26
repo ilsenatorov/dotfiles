@@ -2,7 +2,7 @@
 ### Created by ilsenatorov
 ### Change WALLPAPERDIR to the directory where you store wallpapers
 
-WALLPAPERDIR=/run/media/ilya/SD/Pictures/wallpapers/
+WALLPAPERDIR=/mnt/SD/Pictures/wallpapers/
 
 if [ -z $@ ]
 then
