@@ -15,7 +15,9 @@ W+=ff
 V=$color12
 V+=ff
 xkb-switch -s us
-i3lock -i /tmp/lock.png \
+killall compton
+i3lock -n \
+-i /tmp/lock.png      \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
 \
@@ -35,8 +37,10 @@ i3lock -i /tmp/lock.png \
 --keyhlcolor=$W       \
 --bshlcolor=$W        \
 \
---screen 1            \
+--keylayout 2         \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \
---datestr="%A, %d %m %Y" \
+--datestr="%A, %d %m %Y"
+
+compton -b
