@@ -1,0 +1,6 @@
+*.txt
+*.log
+.sensitive
+ranger/bookmarks
+ranger/tagged
+ranger/history
