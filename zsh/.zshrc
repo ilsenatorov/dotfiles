@@ -3,9 +3,9 @@ ZSH_THEME="mod_agnoster"
 plugins=(
   git
   autopep8
-  command-not-found
-  npm
   sudo
+  colored-man-pages
+  pip
 )
 
 ### Aliases

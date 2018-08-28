@@ -17,5 +17,10 @@ borg create $BORG_OPTS \
   --exclude /tmp \
   $TARGET::$DATE-$$-system \
   / /boot >> $BACKUPDIR/full.log
-borg prune -v --list --keep-last=50 $TARGET >> $BACKUPDIR/full.log
+borg prune \
+-v \
+--list \
+--keep-last 50 \
+--keep-daily 30 \
+--keep-monthly 24 $TARGET >> $BACKUPDIR/full.log
 /home/ilya/dotfiles/backup/fetch_borg_list.sh
