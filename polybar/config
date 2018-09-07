@@ -57,8 +57,13 @@ label-urgent-underline = ${colors.alert}
 label-visible = %name%
 label-visible-foreground = ${colors.foreground}
 label-visible-background = ${colors.background}
+label-visible-underline = ${colors.underline}
 label-visible-padding = 1
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background-alt}
+label-mode-underline = ${colors.underline}
 label-font = 3
+
 
 
 [module/backup]
@@ -187,7 +192,7 @@ type = custom/script
 exec = ~/dotfiles/polybar/lastfm.sh
 tail = true
 click-left = kill -USR1 %pid%
-format-underline = ${colors.underline}
+format-underline = ${colors.primary}
 
 
 [module/xkeyboard]
@@ -196,7 +201,7 @@ blacklist-0 = num lock
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 label-layout = %layout%
-label-layout-underline = ${colors.underline}
+label-layout-underline = ${colors.primary}
 label-indicator-padding = 1
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
@@ -210,7 +215,7 @@ date-alt = "%d, %A"
 time-alt = %H:%M:%S
 time = %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.underline}
+format-underline = ${colors.primary}
 label = %time% %date%
 
 
@@ -219,8 +224,8 @@ type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = 🔊 %percentage%%
 label-muted = 
-format-muted-underline = ${colors.primary}
-format-volume-underline = ${colors.underline}
+format-muted-underline = ${colors.underline}
+format-volume-underline = ${colors.primary}
 format-muted-padding = 1
 
 
