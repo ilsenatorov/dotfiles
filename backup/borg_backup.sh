@@ -1,8 +1,5 @@
 #!/bin/sh
 . /home/pi/dotfiles/.sensitive
-BORG_OPTS="--stats --one-file-system --compression lz4 --checkpoint-interval 86400"
-export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
-export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=no
 DATE=$(date +'%y-%m-%d_%a_%H:%M:%S')-$(hostname)
 TARGET=pi@localhost:/mnt/backups/pi
 
