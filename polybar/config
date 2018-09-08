@@ -1,12 +1,12 @@
 [colors]
-background = ${xrdb:color0:#222}
-background-alt = #222
-foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color7:#222}
-underline = ${xrdb:color5:#222}
+background = ${xrdb:color0:}
+background-alt = 
+foreground = ${xrdb:color7:}
+foreground-alt = ${xrdb:color7:}
+primary = ${xrdb:color1:}
+secondary = ${xrdb:color2:}
+alert = ${xrdb:color7:}
+underline = ${xrdb:color5:}
 
 
 [bar/example]
@@ -48,12 +48,12 @@ label-unfocused = %name%
 label-unfocused-padding = 1
 label-unfocused-foreground = ${colors.foreground}
 label-unfocused-background = ${colors.background}
-# label-unfocused-underline = ${colors.primary}
+; label-unfocused-underline = ${colors.primary}
 label-urgent = %name%
 label-urgent-foreground = ${colors.primary}
 label-urgent-background = ${colors.background}
 label-urgent-padding = 1
-label-urgent-underline = ${colors.alert}
+label-urgent-underline = ${colors.underline}
 label-visible = %name%
 label-visible-foreground = ${colors.foreground}
 label-visible-background = ${colors.background}
@@ -63,7 +63,6 @@ label-mode-foreground = ${colors.foreground}
 label-mode-background = ${colors.background-alt}
 label-mode-underline = ${colors.underline}
 label-font = 3
-
 
 
 [module/backup]
@@ -139,6 +138,7 @@ label =  %gb_used%
 
 [module/cpu]
 type = internal/cpu
+format = <label>
 interval = 2
 format-underline = ${colors.underline}
 label =  %percentage%%
@@ -161,14 +161,6 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
 format-charging-underline = ${colors.alert}
 format-discharging-underline = ${colors.primary}
 format-full-underline = ${colors.underline}
@@ -181,7 +173,7 @@ warn-temperature = 70
 format-underline = ${colors.underline}
 label = %temperature-c%
 label-warn = %temperature-c%
-format-warn-underline = #ff0000
+format-warn-underline = ${colors.primary}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;RIGHT;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
