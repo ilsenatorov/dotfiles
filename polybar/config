@@ -1,12 +1,12 @@
 [colors]
-background = ${xrdb:color0:}
+background = ${xrdb:color0}
 background-alt = 
-foreground = ${xrdb:color7:}
-foreground-alt = ${xrdb:color7:}
-primary = ${xrdb:color1:}
-secondary = ${xrdb:color2:}
-alert = ${xrdb:color7:}
-underline = ${xrdb:color5:}
+foreground = ${xrdb:color7}
+foreground-alt = ${xrdb:color7}
+primary = ${xrdb:color1}
+secondary = ${xrdb:color2}
+alert = ${xrdb:color7}
+underline = ${xrdb:color5}
 
 
 [bar/example]
@@ -85,7 +85,7 @@ format-underline = ${colors.primary}
 type = custom/script
 exec = ~/dotfiles/polybar/ping-pi.sh
 interval = 10
-label = π: %output%
+label = %output%
 format-underline = ${colors.primary}
 
 

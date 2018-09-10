@@ -1,3 +1,4 @@
+. ~/.cache/wal/colors.sh
 t=0
 toggle() {
     t=$(((t + 1) % 2))
@@ -6,9 +7,9 @@ toggle() {
 function check_run () {
     local stat=$(ps aux | grep -c $1)
 if [ $stat -eq 0 ]; then
-	echo 'LB'
+	echo "%{u$color1 +u}LB%{u#0000ff}"
 else
-	echo 'Running'
+	echo "%{u$color5 +u}Running%{u#0000ff}"
 fi
 }
 
