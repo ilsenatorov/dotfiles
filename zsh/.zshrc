@@ -1,6 +1,7 @@
 ZSH_THEME="mod_agnoster"
 
 plugins=(
+  fzf
   git
   autopep8
   sudo

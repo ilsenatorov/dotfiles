@@ -404,6 +404,8 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
 exec --no-startup-id wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh
 exec --no-startup-id wal -R
-exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
+exec_always /home/ilya/dotfiles/polybar/start_polybar.sh
 exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
 exec --no-startup-id compton -b
+
+bindsym $mod+p exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
