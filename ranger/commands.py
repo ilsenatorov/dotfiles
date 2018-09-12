@@ -73,3 +73,8 @@ class gdrive(Command):
         self.fm.run("gdrive upload \"{0}\" {1}".format(file.basename, self.rest(1)))
         self.fm.notify('Done!')
 
+class ftp(Command):
+    def execute(self):
+        file = self.fm.thisfile
+        self.fm.run("scp \"{0}\" {1} pi:/mnt/ftp/storage/".format(file.basename, self.rest(1)))
+        self.fm.notify('Done!')

@@ -25,9 +25,9 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 backup weather ping-pi
+modules-left = i3 backup weather ping-pi gmail
 modules-center = networkdown networkup root memory cpu battery temperature 
-modules-right = lastfm xkeyboard date pulseaudio
+modules-right = lastfm xkeyboard date pulseaudio 
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -79,6 +79,7 @@ exec = ~/dotfiles/polybar/openweathermap-forecast.sh
 interval = 600
 label-font = 3
 format-underline = ${colors.primary}
+click-left = xdg-open https://wunderground.com
 
 
 [module/ping-pi]
@@ -87,6 +88,15 @@ exec = ~/dotfiles/polybar/ping-pi.sh
 interval = 10
 label = %output%
 format-underline = ${colors.primary}
+click-left = termite -e "ssh pi"
+
+
+[module/gmail]
+type = custom/script
+exec = ~/dotfiles/polybar/gmail/launch.py
+tail = true
+click-left = xdg-open https://mail.google.com
+label-underline = ${colors.primary}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;CENTER;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -203,12 +213,12 @@ label-indicator-underline = ${colors.secondary}
 [module/date]
 type = internal/date
 interval = 1
-date-alt = "%d, %A"
+date-alt = "%A, %Y-%m-%d "
 time-alt = %H:%M:%S
 time = %H:%M:%S
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-label = %time% %date%
+label = %date%%time%
 
 
 [module/pulseaudio]
@@ -219,6 +229,7 @@ label-muted = 
 format-muted-underline = ${colors.underline}
 format-volume-underline = ${colors.primary}
 format-muted-padding = 1
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
