@@ -51,13 +51,6 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     forecast_temp=$(echo "$forecast" | jq ".list[].main.temp" | cut -d "." -f 1)
     forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[0].icon")
 
-    if [ "$current_temp" -gt "$forecast_temp" ]; then
-        trend=""
-    elif [ "$forecast_temp" -gt "$current_temp" ]; then
-        trend=""
-    else
-        trend=""
-    fi
-
-    echo "$(get_icon "$current_icon") $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL"
+    echo "$(get_icon "$current_icon") $current_temp$SYMBOL"
+    #  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL
 fi

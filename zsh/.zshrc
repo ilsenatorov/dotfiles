@@ -21,14 +21,12 @@ alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
 
 export FONTCONFIG_PATH=/etc/fonts
 export ZSH=/home/ilya/.oh-my-zsh
-export BACKUPLOG=~/dotfiles/backup/shortlog.txt
 export http_proxy=
 export LANG=en_GB.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
 export PATH="$PATH:/home/ilya/miniconda3/bin"
 export LC_ALL=en_GB.UTF-8
-export TERM=xterm-256color
 
 
 ###Setup

@@ -75,11 +75,11 @@ format-underline = ${colors.primary}
 
 [module/weather]
 type = custom/script
-exec = ~/dotfiles/polybar/openweathermap-forecast.sh
+exec = ~/dotfiles/polybar/openweathermap.sh
 interval = 600
 label-font = 3
 format-underline = ${colors.primary}
-click-left = xdg-open https://wunderground.com
+click-left = xdg-open https://duckduckgo.com/?q=weather
 
 
 [module/ping-pi]
@@ -93,7 +93,7 @@ click-left = termite -e "ssh pi"
 
 [module/gmail]
 type = custom/script
-exec = ~/dotfiles/polybar/gmail/launch.py
+exec = ~/dotfiles/polybar/gmail/launch.py -ns -u
 tail = true
 click-left = xdg-open https://mail.google.com
 label-underline = ${colors.primary}

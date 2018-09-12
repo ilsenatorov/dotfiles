@@ -1,4 +1,5 @@
 *.txt
 *.log
 .sensitive
-polybar/gmail
+polybar/gmail/*
+!polybar/gmail/launch.py
