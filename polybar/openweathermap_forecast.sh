@@ -52,6 +52,5 @@ if [ ! -z "$current" ] && [ ! -z "$forecast" ]; then
     forecast_temp=$(echo "$forecast" | jq ".list[].main.temp" | cut -d "." -f 1)
     forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[0].icon")
 
-    echo "%{u$color1 +u}%{T3}$(get_icon "$current_icon") $current_temp$SYMBOL%{T-}"
-    #  $(get_icon "$forecast_icon") $forecast_temp$SYMBOL
+    echo "%{u$color1 +u}%{T3}$(get_icon "$current_icon") $current_temp$SYMBOL | $(get_icon "$forecast_icon") $forecast_temp$SYMBOL%{T-}"
 fi

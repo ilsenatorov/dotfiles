@@ -25,13 +25,14 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 backup weather ping-pi gmail
+modules-left = i3 backup weather ping-pi gmail demo
 modules-center = networkdown networkup root memory cpu battery temperature 
 modules-right = lastfm xkeyboard date pulseaudio 
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
 cursor-scroll = ns-resize
+enable-ipc = true
 
 ;;;;;;;;;;;;;;;LEFT;;;;;;;;;;;;;;;;;;
 
@@ -74,12 +75,13 @@ format-underline = ${colors.primary}
 
 
 [module/weather]
-type = custom/script
-exec = ~/dotfiles/polybar/openweathermap.sh
-interval = 600
-label-font = 3
-format-underline = ${colors.primary}
-click-left = xdg-open https://duckduckgo.com/?q=weather
+type = custom/ipc
+hook-0 = /home/ilya/dotfiles/polybar/openweathermap.sh
+hook-1 = /home/ilya/dotfiles/polybar/openweathermap_forecast.sh
+initial = 1
+click-left = polybar-msg hook weather 1
+click-right = polybar-msg hook weather 2
+click-middle = xdg-open https://duckduckgo.com/?q=weather
 
 
 [module/ping-pi]
@@ -114,7 +116,7 @@ format-disconnected-underline = ${colors.primary}
 type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %downspeed:8:8%
+label-connected = %{A1:/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu:}%downspeed:8:8%%{A}
 label-disconnected = 
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
@@ -124,8 +126,8 @@ format-disconnected-underline = ${network.format-disconnected-underline}
 type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %upspeed:8:8%
-label-disconnected =  not connected
+label-connected = %{A1:/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu:}%upspeed:8:8%%{A}
+label-disconnected = %{A1:/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu:} not connected%{A}
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
 
@@ -134,7 +136,7 @@ format-disconnected-underline = ${network.format-disconnected-underline}
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted =  %used%/%total%
+label-mounted = %{A1:termite -e "/home/ilya/dotfiles/polybar/find_heaviest.sh" --hold:} %used%/%total%%{A}
 format-mounted = <label-mounted>
 format-mounted-underline = ${colors.underline}
 
@@ -143,7 +145,7 @@ format-mounted-underline = ${colors.underline}
 type = internal/memory
 interval = 2
 format-underline = ${colors.underline}
-label =  %gb_used%
+label = %{A1:termite -e htop:} %gb_used%%{A}
 
 
 [module/cpu]
@@ -151,7 +153,7 @@ type = internal/cpu
 format = <label>
 interval = 2
 format-underline = ${colors.underline}
-label =  %percentage%%
+label = %{A1:termite -e htop:} %percentage%%%{A}
 
 
 [module/battery]
@@ -261,6 +263,15 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 format-background = ${colors.secondary}
 
+[module/card]
+type = internal/fs
+interval = 25
+mount-0 = /mnt/SD
+label-mounted = 💾 %percentage_used%%
+format-mounted = <label-mounted>
+
+format-mounted-underline = ${colors.underline}
+label-font = 3
 
 [settings]
 screenchange-reload = true
@@ -269,3 +280,4 @@ screenchange-reload = true
 [global/wm]
 margin-top = 0
 margin-bottom = 5
+
