@@ -6,3 +6,5 @@ ranger/tagged
 *.txt
 *.log
 .sensitive
+polybar/gmail/*
+!polybar/gmail/launch.py

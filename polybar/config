@@ -1,21 +1,21 @@
 [colors]
-background = ${xrdb:color0:#222}
-background-alt = #222
-foreground = ${xrdb:color7:#222}
-foreground-alt = ${xrdb:color7:#222}
-primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color7:#222}
-underline = ${xrdb:color5:#222}
+background = ${xrdb:color0}
+background-alt =
+foreground = ${xrdb:color7}
+foreground-alt = ${xrdb:color7}
+primary = ${xrdb:color1}
+secondary = ${xrdb:color2}
+alert = ${xrdb:color7}
+underline = ${xrdb:color5}
 
 
 [bar/example]
 width = 100%
-height = 22
+height = 20
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 2
+line-size = 3
 line-color = #f00
 padding-left = 0
 padding-right = 1
@@ -24,47 +24,45 @@ module-margin-right = 1
 font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
-font-3 = Symbola:size=11
-modules-left = i3 backup ping-pi weather
-modules-center = networkdown networkup root card memory cpu battery temperature
+font-3 = Symbola:size=12
+modules-left = i3 backup ping-pi gmail
+modules-center = networkdown networkup root memory cpu battery temperature
 modules-right = xkeyboard date pulseaudio
 tray-position = none
-tray-padding = 2
+tray-padding = 0
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/weather]
-type = custom/script
-exec = ~/dotfiles/polybar/openweathermap-forecast.sh
-interval = 300
+;;;;;;;;;;;;;;;LEFT;;;;;;;;;;;;;;;;;;
+
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+label-focused = %name%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-alt}
+label-focused-padding = 1
+label-focused-underline = ${colors.primary}
+label-unfocused = %name%
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = ${colors.background}
+; label-unfocused-underline = ${colors.primary}
+label-urgent = %name%
+label-urgent-foreground = ${colors.primary}
+label-urgent-background = ${colors.background}
+label-urgent-padding = 1
+label-urgent-underline = ${colors.underline}
+label-visible = %name%
+label-visible-foreground = ${colors.foreground}
+label-visible-background = ${colors.background}
+label-visible-underline = ${colors.underline}
+label-visible-padding = 1
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.background-alt}
+label-mode-underline = ${colors.underline}
 label-font = 3
-format-underline = ${colors.primary}
-
-[network]
-type = internal/network
-interface = wlp2s0
-;udspeed-minwidth = 3
-format-connected-underline = ${colors.underline}
-format-disconnected-underline = ${colors.primary}
-
-
-[module/networkup]
-type = ${network.type}
-interface = ${network.interface}
-;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %upspeed:9:9%
-label-disconnected =  not connected
-format-connected-underline = ${network.format-connected-underline}
-format-disconnected-underline = ${network.format-disconnected-underline}
-
-[module/networkdown]
-type = ${network.type}
-interface = ${network.interface}
-;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %downspeed:9:9%
-label-disconnected =
-format-connected-underline = ${network.format-connected-underline}
-format-disconnected-underline = ${network.format-disconnected-underline}
 
 
 [module/backup]
@@ -74,21 +72,168 @@ tail = true
 click-left = kill -USR1 %pid%
 format-underline = ${colors.primary}
 
+
+[module/weather]
+type = custom/script
+exec = ~/dotfiles/polybar/openweathermap.sh
+interval = 600
+label-font = 3
+format-underline = ${colors.primary}
+click-left = xdg-open https://duckduckgo.com/?q=weather
+
+
 [module/ping-pi]
 type = custom/script
 exec = ~/dotfiles/polybar/ping-pi.sh
 interval = 10
 label = %output%
 format-underline = ${colors.primary}
+click-left = termite -e "ssh pi"
+
+
+[module/gmail]
+type = custom/script
+exec = ~/dotfiles/polybar/gmail/launch.py -ns -u
+tail = true
+click-left = xdg-open https://mail.google.com
+label-underline = ${colors.primary}
+
+
+;;;;;;;;;;;;;;;;;;;;;;CENTER;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[network]
+type = internal/network
+interface = wlp2s0
+;udspeed-minwidth = 3
+format-connected-underline = ${colors.underline}
+format-disconnected-underline = ${colors.primary}
+
+
+[module/networkdown]
+type = ${network.type}
+interface = ${network.interface}
+;udspeed-minwidth = ${network.udspeed-minwidth}
+label-connected = %downspeed:8:8%
+label-disconnected =
+format-connected-underline = ${network.format-connected-underline}
+format-disconnected-underline = ${network.format-disconnected-underline}
+
+
+[module/networkup]
+type = ${network.type}
+interface = ${network.interface}
+;udspeed-minwidth = ${network.udspeed-minwidth}
+label-connected = %upspeed:8:8%
+label-disconnected =  not connected
+format-connected-underline = ${network.format-connected-underline}
+format-disconnected-underline = ${network.format-disconnected-underline}
+
+
+[module/root]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted =  %percentage_used%%
+format-mounted = <label-mounted>
+format-mounted-underline = ${colors.underline}
+
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-underline = ${colors.underline}
+label =  %percentage_used%
+
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+interval = 2
+format-underline = ${colors.underline}
+label =  %percentage%%
+
+
+[module/battery]
+type = internal/battery
+full-at = 90
+battery = BAT1
+adapter = ADP1
+format-charging = <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+time-format = %H:%M
+label-discharging = %time% %percentage%%
+label-charging =  %percentage%%
+label-full = 🔌 %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+format-charging-underline = ${colors.alert}
+format-discharging-underline = ${colors.primary}
+format-full-underline = ${colors.underline}
+
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 70
+format-underline = ${colors.underline}
+label = %temperature-c%
+label-warn = %temperature-c%
+format-warn-underline = ${colors.primary}
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;RIGHT;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[module/lastfm]
+type = custom/script
+exec = ~/dotfiles/polybar/lastfm.sh
+tail = true
+click-left = kill -USR1 %pid%
+format-underline = ${colors.primary}
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+label-layout = %layout%
+label-layout-underline = ${colors.primary}
+label-indicator-padding = 1
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+
+[module/date]
+type = internal/date
+interval = 1
+date-alt = "%A, %Y-%m-%d "
+time-alt = %H:%M:%S
+time = %H:%M:%S
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.primary}
+label = %date%%time%
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume>
 label-volume = 🔊 %percentage%%
 label-muted = 
-format-muted-underline = ${colors.primary}
-format-volume-underline = ${colors.underline}
+format-muted-underline = ${colors.underline}
+format-volume-underline = ${colors.primary}
 format-muted-padding = 1
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -116,67 +261,6 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 format-background = ${colors.secondary}
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-label-layout = %layout%
-label-layout-underline = ${colors.underline}
-label-indicator-padding = 1
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-
-[module/bspwm]
-type = internal/bspwm
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 1
-label-occupied = %index%
-label-occupied-padding = 1
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
-
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.primary}
-label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = ${module/bspwm.label-focused-padding}
-label-unfocused = %index%
-label-unfocused-padding = ${module/bspwm.label-occupied-padding}
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
-
-[module/root]
-type = internal/fs
-interval = 25
-mount-0 = /
-label-mounted =  %percentage_used%%
-format-mounted = <label-mounted>
-format-mounted-underline = ${colors.underline}
-
-
 [module/card]
 type = internal/fs
 interval = 25
@@ -186,74 +270,6 @@ format-mounted = <label-mounted>
 
 format-mounted-underline = ${colors.underline}
 label-font = 3
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-underline = ${colors.underline}
-label =  %gb_used%
-
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-underline = ${colors.underline}
-label =  %percentage%%
-
-
-[module/date]
-type = internal/date
-interval = 1
-date-alt = "%d, %A"
-time-alt = %H:%M:%S
-time = %H:%M:%S
-format-prefix-foreground = ${colors.foreground-alt}
-label = %time% %date%
-format-underline = ${colors.underline}
-
-
-[module/battery]
-type = internal/battery
-full-at = 95
-battery = BAT1
-adapter = ADP1
-format-charging = <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <label-full>
-time-format = %H:%M
-label-discharging = %time% %percentage%%
-label-charging =  %percentage%%
-label-full =  %percentage%%
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-bar-capacity-width = 10
-bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
-bar-capacity-fill = █
-bar-capacity-fill-foreground = #ddffffff
-bar-capacity-fill-font = 3
-bar-capacity-empty = █
-bar-capacity-empty-font = 3
-bar-capacity-empty-foreground = #44ffffff
-
-format-charging-underline = ${colors.alert}
-format-discharging-underline = ${colors.primary}
-format-full-underline = ${colors.underline}
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 70
-format-underline = ${colors.underline}
-label = %temperature-c%
-label-warn = %temperature-c%
-format-warn-underline = #ff0000
-
 
 [settings]
 screenchange-reload = true
