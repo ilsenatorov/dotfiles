@@ -25,7 +25,7 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=11
-modules-left = i3 backup weather
+modules-left = i3 backup ping-pi weather
 modules-center = networkdown networkup root card memory cpu battery temperature
 modules-right = xkeyboard date pulseaudio
 tray-position = none
@@ -74,6 +74,12 @@ tail = true
 click-left = kill -USR1 %pid%
 format-underline = ${colors.primary}
 
+[module/ping-pi]
+type = custom/script
+exec = ~/dotfiles/polybar/ping-pi.sh
+interval = 10
+label = %output%
+format-underline = ${colors.primary}
 
 [module/pulseaudio]
 type = internal/pulseaudio
