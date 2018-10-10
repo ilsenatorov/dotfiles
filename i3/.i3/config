@@ -32,11 +32,11 @@ bindsym $mod+c exec google-chrome-stable
 # kill focused window
 bindsym $mod+Shift+q kill
 # start program launcher
-bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show run"
+bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show run"
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
-bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
 bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
-
+bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
 #bindsym $mod+z exec --no-startup-id dmenu_run
 
 ################################################################################################
@@ -237,9 +237,6 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -401,11 +398,7 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-exec --no-startup-id setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'
-exec --no-startup-id wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh
-exec --no-startup-id wal -R
-exec_always /home/ilya/dotfiles/polybar/start_polybar.sh
-exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
-exec --no-startup-id compton -b
-
-bindsym $mod+p exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
+exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
+exec --no-startup-id "wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh"
+exec --no-startup-id "sleep 10; /home/ilya/dotfiles/polybar/start_polybar.sh"
+exec --no-startup-id "compton -b"
