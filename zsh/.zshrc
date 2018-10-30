@@ -20,7 +20,7 @@ export ZSH=/home/pi/.oh-my-zsh
 export http_proxy=
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
-
+export TERM=xterm-color
 
 ###Setup
 

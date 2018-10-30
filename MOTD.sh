@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 # Script to print various input on startup, can be called from zshrc
 ###
@@ -19,21 +19,22 @@ UPTIME=`printf "%d days, %02dh% 02dm% 02ds" "$days" "$hours" "$mins" "$secs"`
 DISKS=`df -h | grep "^\/dev\/"`
 TEMP=`vcgencmd measure_temp | grep -Po "\d\d\.\d"`
 
-# Get status of telegram bot
-zh=$(ps aux | grep -c "[Z]henya")
-if [ $zh -eq 0 ]; then
-	ZHENYA='Dead'
+### Function to check if process is alive
+function alive()
+{
+    local stat=$(ps aux | grep -c $1)
+if [ $stat -eq 0 ]; then
+	echo 'Dead'
 else
-	ZHENYA='Alive'
+	echo 'Alive'
 fi
+}
 
-# Get status of ftp server
-ftp=$(systemctl is-active vsftpd | grep -c "ina[c]tive")
-if [ $ftp -eq 0 ]; then
-	FTP='Alive'
-else
-	FTP='Dead'
-fi
+
+# Get status of telegram bot
+ZHENYA=$(alive "[Z]henya")
+ZNC=$(alive "[z]nc")
+FTP=$(alive "[f]tp")
 # Get backups info
 BACKUPLOG='/home/pi/dotfiles/backup/allbackups.log'
 BIGBACKUP=$(head -n 1 $BACKUPLOG)
@@ -55,6 +56,7 @@ Temperature........: ${TEMP} °C
 ${RED}Services:${NC}
 FTP................: ${FTP}
 Zhenya.............: ${ZHENYA}
+ZNC................: ${ZNC}
 
 ${RED}Disks:${NC}
 ${DISKS}    
