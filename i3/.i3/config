@@ -36,7 +36,7 @@ bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
 bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
-bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
+#bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
 #bindsym $mod+z exec --no-startup-id dmenu_run
 
 ################################################################################################
@@ -400,5 +400,6 @@ mode "$mode_gaps_outer" {
 }
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
 exec --no-startup-id "wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh"
-exec --no-startup-id "sleep 10; /home/ilya/dotfiles/polybar/start_polybar.sh"
+exec --no-startup-id "sleep 5; /home/ilya/dotfiles/polybar/start_polybar.sh"
 exec --no-startup-id "compton -b"
+exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
