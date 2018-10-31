@@ -27,7 +27,7 @@ font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
 modules-left = i3 backup weather ping-pi gmail
 modules-center = networkdown networkup root memory cpu battery temperature 
-modules-right = lastfm xkeyboard date pulseaudio 
+modules-right = lastfm xkeyboard date pulseaudio redshift
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -232,7 +232,12 @@ format-muted-underline = ${colors.underline}
 format-volume-underline = ${colors.primary}
 format-muted-padding = 1
 
-
+[module/redshift]
+type = custom/script
+exec = ~/dotfiles/polybar/redshift.sh
+interval = 5
+click-left = redshift -O 5000
+click-right = redshift -x
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
