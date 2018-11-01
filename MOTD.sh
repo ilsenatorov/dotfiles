@@ -40,6 +40,7 @@ BACKUPLOG='/home/pi/dotfiles/backup/allbackups.log'
 BIGBACKUP=$(head -n 1 $BACKUPLOG)
 SMALLBACKUP=$(head -n 2 $BACKUPLOG | tail -n 1)
 PIBACKUP=$(tail -n 1 $BACKUPLOG)
+DOCUMENTS=$(cat ~/dotfiles/backup/.lastdocs.txt)
 
 # get the load averages
 read one five fifteen rest < /proc/loadavg
@@ -65,4 +66,5 @@ ${RED}Backups:${NC}
 Big................: ${BIGBACKUP}
 Small..............: ${SMALLBACKUP}
 Pi.................: ${PIBACKUP}
+Documents..........: ${DOCUMENTS}
 "
