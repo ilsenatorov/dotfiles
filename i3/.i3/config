@@ -167,14 +167,14 @@ bindsym $mod+Ctrl+Left workspace prev
 # set $ws7 7
 # set $ws8 8
 
-set $ws1 1:🌍
-set $ws2 2:💻
-set $ws3 3:📁
-set $ws4 4:📷
-set $ws5 5:📖
-set $ws6 6:⇄
-set $ws7 7:♬
-set $ws8 8:♻️
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8️
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -403,4 +403,4 @@ exec --no-startup-id "wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh"
 exec --no-startup-id "sleep 5; /home/ilya/dotfiles/polybar/start_polybar.sh"
 exec --no-startup-id "compton -b"
 exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
-#exec --no-startup-id "redshift -P -O 5000"
+exec --no-startup-id "redshift -P -O 4500; echo 4500 > /home/ilya/dotfiles/polybar/.redshift_temp.log"

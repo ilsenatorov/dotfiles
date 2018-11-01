@@ -25,7 +25,7 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 LFB LDB weather ping-pi gmail
+modules-left = i3 weather ping-pi gmail LFB LDB
 modules-center = networkdown networkup root memory cpu battery temperature 
 modules-right = lastfm xkeyboard date pulseaudio redshift
 tray-position = none
@@ -78,6 +78,7 @@ type = custom/script
 exec = ~/dotfiles/polybar/LDB.sh
 tail = true
 click-left = kill -USR1 %pid%
+click-right = ~/dotfiles/backup/documents_backup.sh
 format-underline = ${colors.primary}
 
 

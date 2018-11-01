@@ -8,9 +8,9 @@ trap "toggle" USR1
 function check_run () {
 local stat=$(ps aux | grep -c $1)
 if [ $stat -eq 0 ]; then
-	echo "%{u$color1 +u}LFB"
+	echo "%{u$color1 +u}💻"
 else
-	echo "%{u$color5 +u}FB Running"
+	echo "%{u$color5 +u}💻 Running"
 fi
 }
 
