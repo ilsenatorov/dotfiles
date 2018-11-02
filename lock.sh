@@ -1,7 +1,8 @@
 #!/bin/sh
 source ~/.cache/wal/colors.sh
 scrot /tmp/lock.png
-convert -scale 5% -scale 2000% /tmp/lock.png /tmp/lock.png
+cd ~/dotfiles/pixelize
+invoke pixelize /tmp/lock.png --output-width=1920
 B=$color2
 B+=22
 C=$color3
@@ -17,7 +18,7 @@ V+=ff
 xkb-switch -s us
 killall compton
 i3lock -n \
--i /tmp/lock.png      \
+-i /tmp/lock.processed.png      \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
 \
@@ -42,5 +43,4 @@ i3lock -n \
 --indicator           \
 --timestr="%H:%M:%S"  \
 --datestr="%A, %d %m %Y"
-
 compton -b
