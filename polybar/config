@@ -25,9 +25,9 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 weather ping-pi LFB LDB gmail
+modules-left = i3 weather ping-pi gmail LFB LDB
 modules-center = networkdown networkup root memory cpu battery temperature 
-modules-right = lastfm xkeyboard date pulseaudio redshift
+modules-right = lastfm redshift backlight pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -248,6 +248,18 @@ click-left = redshift -P -O 4500; echo 4500 > ~/dotfiles/polybar/.redshift_temp.
 click-right = redshift -x; echo 6500 > ~/dotfiles/polybar/.redshift_temp.log
 scroll-up = ~/dotfiles/polybar/redshift_change.sh +250
 scroll-down = ~/dotfiles/polybar/redshift_change.sh -250
+
+[module/backlight]
+type = custom/script
+exec = light | grep -Po "\d+\." | sed 's|\.|%|g'
+label = 💡 %output%
+interval = 1
+click-left = light -S 100
+click-right = light -S 0
+scroll-up = light -A 10
+scroll-down = light -U 10
+format-underline = ${colors.primary}
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

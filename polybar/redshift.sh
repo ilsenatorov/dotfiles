@@ -8,7 +8,7 @@ TEMP=$(cat ~/dotfiles/polybar/.redshift_temp.log)
 
 # Check for at least one value not being 1.0. X appears to stay as 1.0, but Y and Z change.
 if [ $GAMMAX != 1.0 ] | [ $GAMMAY != 1.0 ] | [ $GAMMAZ != 1.0 ]; then
-	ICON="%{u$color5 +u} $TEMP"
+	ICON="%{u$color5 +u} $TEMP K"
 else
 	ICON="%{u$color1 +u}"
 fi 
