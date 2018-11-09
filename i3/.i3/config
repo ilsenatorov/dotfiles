@@ -397,3 +397,4 @@ exec --no-startup-id wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh
 exec --no-startup-id wal -R
 exec --no-startup-id /home/ilya/dotfiles/polybar/start_polybar.sh
 exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
+exec --no-startup-id "redshift -P -O 4500"
