@@ -25,8 +25,8 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 backup ping-pi gmail
-modules-center = networkdown networkup root memory cpu battery temperature
+modules-left = i3 ping-pi gmail LFB LDB
+modules-center = networkdown networkup card root memory cpu battery temperature
 modules-right = xkeyboard date pulseaudio
 tray-position = none
 tray-padding = 0
@@ -65,11 +65,19 @@ label-mode-underline = ${colors.underline}
 label-font = 3
 
 
-[module/backup]
+[module/LFB]
 type = custom/script
-exec = ~/dotfiles/polybar/LB.sh
+exec = ~/dotfiles/polybar/LFB.sh
 tail = true
 click-left = kill -USR1 %pid%
+format-underline = ${colors.primary}
+
+[module/LDB]
+type = custom/script
+exec = ~/dotfiles/polybar/LDB.sh
+tail = true
+click-left = kill -USR1 %pid%
+click-right = ~/dotfiles/backup/documents_backup.sh &
 format-underline = ${colors.primary}
 
 
@@ -143,7 +151,7 @@ format-mounted-underline = ${colors.underline}
 type = internal/memory
 interval = 2
 format-underline = ${colors.underline}
-label =  %percentage_used%
+label =  %percentage_used%%
 
 
 [module/cpu]

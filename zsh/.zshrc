@@ -1,4 +1,4 @@
-ZSH_THEME="agnoster"
+ZSH_THEME="mod_agnoster"
 
 plugins=(
   git
@@ -26,10 +26,8 @@ export http_proxy=
 export LANG=en_GB.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
-export KEY_MODELLER='MODELIRANJE'
 export PATH="$PATH:/home/ilya/miniconda3/bin"
 export LC_ALL=en_GB.UTF-8
-export TERM=xterm-256color
 
 
 ###Setup
