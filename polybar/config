@@ -27,7 +27,7 @@ font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
 modules-left = i3 ping-pi gmail LFB LDB
 modules-center = networkdown networkup card root memory cpu battery temperature
-modules-right = xkeyboard date pulseaudio
+modules-right = xkeyboard date backlight pulseaudio
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -238,7 +238,16 @@ format-muted-underline = ${colors.underline}
 format-volume-underline = ${colors.primary}
 format-muted-padding = 1
 
-
+[module/backlight]
+type = custom/script
+exec = light | grep -Po "\d+\." | sed 's|\.|%|g'
+label = 💡 %output%
+interval = 1
+click-left = light -S 100
+click-right = light -S 0
+scroll-up = light -A 10
+scroll-down = light -U 10
+format-underline = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
