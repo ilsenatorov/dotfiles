@@ -21,18 +21,18 @@ alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
 
 export FONTCONFIG_PATH=/etc/fonts
 export ZSH=/home/ilya/.oh-my-zsh
-export http_proxy=
-export LANG=en_GB.UTF-8
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
 export PATH="$PATH:/home/ilya/miniconda3/bin"
+export LANG=/usr/lib/locale/en_GB
 export LC_ALL=en_GB.UTF-8
+
 
 
 ###Setup
 
 source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 . /home/ilya/miniconda3/etc/profile.d/conda.sh

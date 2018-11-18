@@ -36,6 +36,8 @@ bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
 bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
+bindsym $mod+r exec termite -e 'launch_ranger'
+bindsym $mod+o exec okular
 #bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
 #bindsym $mod+z exec --no-startup-id dmenu_run
 
