@@ -1,7 +1,7 @@
 [options]
 allow_bold = true
 clickable_url = true
-font = Hack Nerd Font 11
+font = Hack Nerd Font 10
 scrollback_lines = 10000
 
 [colors]

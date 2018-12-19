@@ -87,7 +87,7 @@ exec = ~/dotfiles/polybar/openweathermap.sh
 interval = 600
 label-font = 3
 format-underline = ${colors.primary}
-click-left = xdg-open https://duckduckgo.com/?q=weather
+click-left = xdg-open https://duckduckgo.com/?q=weather &
 
 
 [module/ping-pi]
@@ -103,7 +103,7 @@ click-left = termite -e "ssh pi"
 type = custom/script
 exec = ~/dotfiles/polybar/gmail/launch.py -ns -u
 tail = true
-click-left = xdg-open https://mail.google.com
+click-left = xdg-open https://mail.google.com &
 label-underline = ${colors.primary}
 
 
@@ -122,7 +122,7 @@ format-disconnected-underline = ${colors.primary}
 type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %downspeed:8:8%
+label-connected = %{A1:networkmanager_dmenu:}%downspeed:8:8%%{A}
 label-disconnected =
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
@@ -132,8 +132,8 @@ format-disconnected-underline = ${network.format-disconnected-underline}
 type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
-label-connected = %upspeed:8:8%
-label-disconnected =  not connected
+label-connected = %{A1:networkmanager_dmenu:}%upspeed:8:8%%{A}
+label-disconnected = %{A1:networkmanager_dmenu:} not connected%{A}
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
 

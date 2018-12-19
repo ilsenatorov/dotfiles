@@ -290,7 +290,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id /home/ilya/dotfiles/conky/start_small_conky.sh
-exec --no-startup-id xautolock -corners ---- -time 10 -locker /home/ilya/dotfiles/lock.sh
+#exec --no-startup-id xautolock -corners ---- -time 10 -locker /home/ilya/dotfiles/lock.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
