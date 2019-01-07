@@ -28,16 +28,17 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
-bindsym $mod+c exec google-chrome-stable
+bindsym $mod+c exec firefox
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+k kill
 # start program launcher
 bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show run"
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
 bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
 bindsym $mod+r exec termite -e 'launch_ranger'
-bindsym $mod+o exec okular
+bindsym $mod+l exec --no-startup-id i3-layout-manager
 #bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
 #bindsym $mod+z exec --no-startup-id dmenu_run
 
@@ -73,7 +74,6 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
 
 ## Manual management of external displays
@@ -104,10 +104,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left

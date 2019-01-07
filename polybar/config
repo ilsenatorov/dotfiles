@@ -25,9 +25,9 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 weather ping-pi gmail LFB LDB
+modules-left = i3 weather ping-pi LFB LDB
 modules-center = networkdown networkup root memory cpu battery temperature 
-modules-right = lastfm redshift backlight pulseaudio xkeyboard date
+modules-right = redshift backlight pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
 cursor-click = pointer

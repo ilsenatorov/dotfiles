@@ -21,7 +21,7 @@ alias jup='jupyter notebook --NotebookApp.iopub_data_rate_limit=10000000'
 
 export FONTCONFIG_PATH=/etc/fonts
 export ZSH=/home/ilya/.oh-my-zsh
-export BROWSER=/usr/bin/google-chrome-stable
+export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/vim
 export PATH="$PATH:/home/ilya/miniconda3/bin"
 export LANG=/usr/lib/locale/en_GB
