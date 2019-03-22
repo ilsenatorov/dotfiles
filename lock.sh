@@ -39,4 +39,4 @@ i3lock -i /tmp/lock.png \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \
---datestr="%A, %d %m %Y" \
+--datestr="%A, %d-%m-%Y" \

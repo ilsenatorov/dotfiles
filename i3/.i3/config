@@ -28,11 +28,12 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
-bindsym $mod+c exec google-chrome-stable
+bindsym $mod+c exec firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+r exec termite -e 'launch_ranger'
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id dmenu_run
 
