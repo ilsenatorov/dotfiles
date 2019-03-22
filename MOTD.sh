@@ -33,6 +33,7 @@ fi
 
 # Get status of telegram bot
 ZHENYA=$(alive "[Z]henya")
+HELPER=$(alive "[H]elper")
 ZNC=$(alive "[z]nc")
 FTP=$(alive "[f]tp")
 # Get backups info
@@ -56,8 +57,9 @@ Temperature........: ${TEMP} °C
 
 ${RED}Services:${NC}
 FTP................: ${FTP}
-Zhenya.............: ${ZHENYA}
 ZNC................: ${ZNC}
+Zhenya.............: ${ZHENYA}
+Helper.............: ${HELPER}
 
 ${RED}Disks:${NC}
 ${DISKS}    

@@ -21,6 +21,8 @@ export http_proxy=
 export BROWSER=/usr/bin/google-chrome-stable
 export EDITOR=/usr/bin/vim
 export TERM=xterm-color
+export LANG=/usr/lib/locale/en_GB
+export PATH="$PATH:/home/pi/berryconda3/bin"
 
 ###Setup
 
