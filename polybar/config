@@ -21,10 +21,13 @@ padding-left = 0
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
+
 font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
+font-4 = "Fantasque Sans Mono:pixelsize=10;3"
+font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3 weather ping-pi LFB LDB
 modules-center = networkdown networkup root memory cpu battery temperature 
 modules-right = redshift backlight pulseaudio xkeyboard date
@@ -176,11 +179,17 @@ time-format = %H:%M
 label-discharging = %time% %percentage%%
 label-charging =  %percentage%%
 label-full = 🔌 %percentage%%
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+# format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
 format-charging-underline = ${colors.alert}
 format-discharging-underline = ${colors.primary}
 format-full-underline = ${colors.underline}
