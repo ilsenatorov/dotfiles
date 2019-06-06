@@ -24,6 +24,7 @@ export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/vim
 export LANG=/usr/lib/locale/en_GB
 export LC_ALL=en_GB.UTF-8
+PATH=$PATH:/home/ilya/dotfiles/backup:/home/ilya/dotfiles/monitors
 
 
 
