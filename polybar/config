@@ -1,6 +1,6 @@
 [colors]
 background = ${xrdb:color0}
-background-alt = 
+background-alt =
 foreground = ${xrdb:color7}
 foreground-alt = ${xrdb:color7}
 primary = ${xrdb:color1}
@@ -9,7 +9,8 @@ alert = ${xrdb:color7}
 underline = ${xrdb:color5}
 
 
-[bar/example]
+[bar/main]
+monitor = eDP-1-1
 width = 100%
 height = 20
 fixed-center = true
@@ -21,7 +22,6 @@ padding-left = 0
 padding-right = 1
 module-margin-left = 0
 module-margin-right = 1
-
 font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
@@ -29,8 +29,37 @@ font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3 weather ping-pi LFB LDB
-modules-center = networkdown networkup root memory cpu battery temperature 
-modules-right = redshift backlight pulseaudio xkeyboard date
+modules-center = networkdown networkup root memory cpu battery temperature
+modules-right = backlight pulseaudio xkeyboard date
+tray-position = none
+tray-padding = 0
+cursor-click = pointer
+cursor-scroll = ns-resize
+enable-ipc = true
+
+
+[bar/secondary]
+monitor = HDMI-0
+width = 100%
+height = 20
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 3
+line-color = #f00
+padding-left = 0
+padding-right = 1
+module-margin-left = 0
+module-margin-right = 1
+font-0 = Hack Nerd Font:size=11
+font-1 = Weather Icons:size=11;1
+font-2 = Materials Icons:size=11
+font-3 = Symbola:size=12
+font-4 = "Fantasque Sans Mono:pixelsize=10;3"
+font-5 = "Iosevka Nerd Font:pixelsize=13;3"
+modules-left = i3 weather ping-pi LFB LDB
+modules-center = networkdown networkup root memory cpu battery temperature
+modules-right = pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -43,6 +72,7 @@ enable-ipc = true
 [module/i3]
 type = internal/i3
 strip-wsnumbers = true
+pin-workspaces = true
 label-focused = %name%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-alt}
@@ -128,7 +158,7 @@ type = ${network.type}
 interface = ${network.interface}
 ;udspeed-minwidth = ${network.udspeed-minwidth}
 label-connected = %{A1:/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu:}%downspeed:8:8%%{A}
-label-disconnected = 
+label-disconnected =
 format-connected-underline = ${network.format-connected-underline}
 format-disconnected-underline = ${network.format-disconnected-underline}
 

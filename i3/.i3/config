@@ -37,10 +37,9 @@ bindsym $mod+z exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/
 bindsym $mod+t exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show themes"
 bindsym $mod+d exec --no-startup-id "rofi -modi drun,run,themes:~/dotfiles/rofi/themeswitch.sh -show drun"
 bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
-bindsym $mod+r exec termite -e 'launch_ranger'
-bindsym $mod+l exec --no-startup-id i3-layout-manager
-#bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
-#bindsym $mod+z exec --no-startup-id dmenu_run
+# bindsym $mod+r exec termite -e 'launch_ranger'
+# bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
+# bindsym $mod+z exec --no-startup-id dmenu_run
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -59,7 +58,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+# bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
@@ -70,11 +69,6 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+semicolon focus right
 
 ## Manual management of external displays
 # Set the shortcuts and what they do
@@ -156,15 +150,6 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-# set $ws1 1
-# set $ws2 2
-# set $ws3 3
-# set $ws4 4
-# set $ws5 5
-# set $ws6 6
-# set $ws7 7
-# set $ws8 8
-
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -172,7 +157,20 @@ set $ws4 4
 set $ws5 5
 set $ws6 6
 set $ws7 7
-set $ws8 8️
+set $ws8 8
+
+workspace 1 output eDP-1-1
+workspace 2 output eDP-1-1
+workspace 3 output eDP-1-1
+workspace 4 output eDP-1-1
+workspace 5 output HDMI-0
+workspace 6 output HDMI-0
+workspace 7 output HDMI-0
+workspace 8 output HDMI-0
+
+workspace_auto_back_and_forth no
+
+bindsym $mod+Tab focus output up
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -203,8 +201,6 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-# Open applications on specific workspaces
-
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -235,20 +231,15 @@ for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id /home/ilya/dotfiles/lock.sh, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
