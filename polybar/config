@@ -29,7 +29,7 @@ font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3 weather ping-pi LFB LDB
-modules-center = networkdown networkup root memory cpu battery temperature
+modules-center = networkdown networkup root memory cpu gpu battery temperature
 modules-right = backlight pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
@@ -58,7 +58,7 @@ font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3 weather ping-pi LFB LDB
-modules-center = networkdown networkup root memory cpu battery temperature
+modules-center = networkdown networkup root memory cpu gpu battery temperature
 modules-right = pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
@@ -196,6 +196,14 @@ interval = 2
 format-underline = ${colors.underline}
 label = %{A1:termite -e htop:} %percentage%%%{A}
 
+[module/gpu]
+type = custom/script
+exec = ~/dotfiles/polybar/gpu.sh
+format-underline = ${colors.underline}
+interval = 2
+label = 📼 %output%%
+label-font = 1
+
 
 [module/battery]
 type = internal/battery
@@ -238,14 +246,6 @@ format-warn-underline = ${colors.primary}
 ;;;;;;;;;;;;;;;;;;;;;;;;;;RIGHT;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-[module/lastfm]
-type = custom/script
-exec = ~/dotfiles/polybar/lastfm.sh
-tail = true
-click-left = kill -USR1 %pid%
-format-underline = ${colors.primary}
-
-
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -278,15 +278,6 @@ label-muted = 
 format-muted-underline = ${colors.underline}
 format-volume-underline = ${colors.primary}
 format-muted-padding = 1
-
-[module/redshift]
-type = custom/script
-exec = ~/dotfiles/polybar/redshift.sh
-interval = 1
-click-left = redshift -P -O 4500; echo 4500 > ~/dotfiles/polybar/.redshift_temp.log
-click-right = redshift -x; echo 6500 > ~/dotfiles/polybar/.redshift_temp.log
-scroll-up = ~/dotfiles/polybar/redshift_change.sh +250
-scroll-down = ~/dotfiles/polybar/redshift_change.sh -250
 
 [module/backlight]
 type = custom/script
@@ -336,7 +327,6 @@ interval = 25
 mount-0 = /mnt/SD
 label-mounted = 💾 %percentage_used%%
 format-mounted = <label-mounted>
-
 format-mounted-underline = ${colors.underline}
 label-font = 3
 
@@ -348,3 +338,18 @@ screenchange-reload = true
 margin-top = 0
 margin-bottom = 5
 
+[module/redshift]
+type = custom/script
+exec = ~/dotfiles/polybar/redshift.sh
+interval = 1
+click-left = redshift -P -O 4500; echo 4500 > ~/dotfiles/polybar/.redshift_temp.log
+click-right = redshift -x; echo 6500 > ~/dotfiles/polybar/.redshift_temp.log
+scroll-up = ~/dotfiles/polybar/redshift_change.sh +250
+scroll-down = ~/dotfiles/polybar/redshift_change.sh -250
+
+[module/lastfm]
+type = custom/script
+exec = ~/dotfiles/polybar/lastfm.sh
+tail = true
+click-left = kill -USR1 %pid%
+format-underline = ${colors.primary}

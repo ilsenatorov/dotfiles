@@ -15,7 +15,7 @@ W+=ff
 V=$color12
 V+=ff
 xkb-switch -s us
-killall compton
+# killall compton
 i3lock -n \
 -i /tmp/lock.png      \
 --insidevercolor=$C   \
@@ -42,4 +42,4 @@ i3lock -n \
 --indicator           \
 --timestr="%H:%M:%S"  \
 --datestr="%A, %d %m %Y"
-compton -b
+# compton -b

@@ -58,8 +58,6 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-# bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-# bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
@@ -106,7 +104,6 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -382,3 +379,4 @@ exec --no-startup-id "sleep 5; /home/ilya/dotfiles/polybar/start_polybar.sh"
 exec --no-startup-id "compton -b"
 exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
 exec --no-startup-id "redshift -P -O 4500; echo 4500 > /home/ilya/dotfiles/polybar/.redshift_temp.log"
+exec --no-startup-id "flashfocus"
