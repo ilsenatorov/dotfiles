@@ -9,7 +9,33 @@ alert = ${xrdb:color7}
 underline = ${xrdb:color5}
 
 
-[bar/example]
+[bar/main]
+monitor = eDP1
+width = 100%
+height = 20
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 3
+line-color = #f00
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 1
+font-0 = Hack Nerd Font:size=11
+font-1 = Weather Icons:size=11
+font-2 = Materials Icons:size=11
+font-3 = Symbola:size=12
+modules-left = i3 ping-pi LFB LDB
+modules-center = networkdown networkup card root memory cpu battery temperature
+modules-right = backlight pulseaudio xkeyboard date
+tray-position = none
+tray-padding = 0
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/secondary]
+monitor = HDMI1
 width = 100%
 height = 20
 fixed-center = true
@@ -27,7 +53,7 @@ font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
 modules-left = i3 ping-pi LFB LDB
 modules-center = networkdown networkup card root memory cpu battery temperature
-modules-right = xkeyboard date backlight pulseaudio
+modules-right = xkeyboard date pulseaudio
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -39,6 +65,7 @@ cursor-scroll = ns-resize
 [module/i3]
 type = internal/i3
 strip-wsnumbers = true
+pin-workspace = false
 label-focused = %name%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-alt}
@@ -187,7 +214,7 @@ format-full-underline = ${colors.underline}
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 70
+warn-temperature = 40
 format-underline = ${colors.underline}
 label = %temperature-c%
 label-warn = %temperature-c%
@@ -208,12 +235,10 @@ format-underline = ${colors.primary}
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
+format = <label-layout><label-indicator>
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
-label-layout = %layout%
 label-layout-underline = ${colors.primary}
-label-indicator-padding = 1
-label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
 
@@ -223,7 +248,7 @@ type = internal/date
 interval = 1
 date-alt = "%A, %Y-%m-%d "
 time-alt = %H:%M:%S
-time = %H:%M:%S
+time = "%H:%M:%S"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
 label = %date%%time%
