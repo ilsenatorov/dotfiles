@@ -3,10 +3,10 @@ allow_bold = true
 clickable_url = true
 font = Hack Nerd Font 11
 scrollback_lines = 10000
+# Keep colours below line 9!
+
 
 [colors]
-background = #080414
-foreground = #8cacbb
 background = #09090D
 foreground = #8fd2dc
 cursor     = #8fd2dc

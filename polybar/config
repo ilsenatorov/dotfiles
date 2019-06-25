@@ -30,7 +30,7 @@ font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3 weather ping-pi LFB LDB
 modules-center = networkdown networkup root memory cpu gpu battery temperature
-modules-right = backlight pulseaudio xkeyboard date
+modules-right =  backlight pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
 cursor-click = pointer
@@ -272,6 +272,7 @@ label = %date%%time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
+use-ui-max = false
 format-volume = <label-volume>
 label-volume = 🔊 %percentage%%
 label-muted = 

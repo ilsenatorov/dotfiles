@@ -11,6 +11,6 @@ if [ $GAMMAX != 1.0 ] | [ $GAMMAY != 1.0 ] | [ $GAMMAZ != 1.0 ]; then
 	ICON="%{u$color5 +u} $TEMP K"
 else
 	ICON="%{u$color1 +u}"
-fi 
+fi
 
 echo $ICON

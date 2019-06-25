@@ -1,6 +1,6 @@
 !!!!!!!!!!!!URXVT!!!!!!!!!!!!!!
 
-*.font:	Hack 12
+*.font:	Hack 14
 
 Xft.dpi:                        96
 Xft.antialias:                  1
