@@ -380,3 +380,4 @@ exec --no-startup-id "compton -b"
 exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
 exec --no-startup-id "redshift -P -O 4500; echo 4500 > /home/ilya/dotfiles/polybar/.redshift_temp.log"
 exec --no-startup-id "flashfocus"
+exec --no-startup-id ~/dotfiles/glava/restart_glava.sh
