@@ -45,11 +45,7 @@ bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/ne
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -380,4 +376,4 @@ exec --no-startup-id "compton -b"
 exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
 exec --no-startup-id "redshift -P -O 4500; echo 4500 > /home/ilya/dotfiles/polybar/.redshift_temp.log"
 exec --no-startup-id "flashfocus"
-exec --no-startup-id ~/dotfiles/glava/restart_glava.sh
+exec --no-startup-id ~/dotfiles/polybar/spotify/launchlistener.sh

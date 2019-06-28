@@ -57,8 +57,8 @@ font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
-modules-left = i3 weather ping-pi LFB LDB
-modules-center = networkdown networkup root memory cpu gpu battery temperature
+modules-left = i3
+modules-center = spotify previous playpause next
 modules-right = pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
@@ -272,7 +272,7 @@ label = %date%%time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
-use-ui-max = false
+use-ui-max = true
 format-volume = <label-volume>
 label-volume = 🔊 %percentage%%
 label-muted = 
@@ -291,6 +291,56 @@ scroll-up = light -A 10
 scroll-down = light -U 10
 format-underline = ${colors.primary}
 
+
+[module/previous]
+type = custom/script
+interval = 100
+format = "%{T3}<label>"
+format-padding = 0
+; Previous song icon
+exec = echo "⏪"
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+format-underline = ${colors.primary}
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/next]
+type = custom/script
+interval = 100
+format = "%{T3}<label>"
+format-padding = 0
+; Next song icon
+exec = echo "⏭️"
+; Check if spotify is running before displaying the icon
+exec-if = "pgrep spotify"
+format-underline = ${colors.primary}
+line-size = 0
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+[module/playpause]
+type = custom/ipc
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo "⏸"
+; Paused
+hook-2 = echo "▶️"
+initial = 1
+format-underline = ${colors.primary}
+line-size = 0
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = python3 ~/dotfiles/polybar/spotify/spotify_status.py -f "{artist} - {song}"
+initial = 2
+format-padding = 0
+format-underline = ${colors.primary}
+line-size = 0
+; [i3wm only] - Uncomment the below line to focus on Spotify when clicking on the song name (credits to https://github.com/Esya)
+click-left = i3-msg '[class="Spotify"] focus'
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
