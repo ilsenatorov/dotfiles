@@ -4,4 +4,3 @@ sleep 1
 ~/dotfiles/polybar/start_polybar.sh
 pkill conky
 ~/dotfiles/conky/start_conky.sh
-pkill compton

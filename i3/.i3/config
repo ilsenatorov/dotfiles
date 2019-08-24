@@ -385,4 +385,5 @@ exec --no-startup-id wal -R
 exec --no-startup-id sleep 5; /home/ilya/dotfiles/polybar/start_polybar.sh
 exec --no-startup-id export BROWSER=/usr/bin/google-chrome-stable
 exec --no-startup-id "redshift -P -O 4500"
+exec --no-startup-id compton -b
 exec --no-startup-id flashfocus

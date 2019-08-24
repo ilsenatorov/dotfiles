@@ -65,7 +65,7 @@ cursor-scroll = ns-resize
 [module/i3]
 type = internal/i3
 strip-wsnumbers = true
-pin-workspace = false
+pin-workspaces = true
 label-focused = %name%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-alt}
