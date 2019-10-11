@@ -29,7 +29,7 @@ font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3 weather ping-pi LFB LDB
-modules-center = networkdown networkup root memory cpu gpu battery temperature
+modules-center = networkdown networkup root memory cpu battery temperature
 modules-right =  backlight pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
@@ -58,7 +58,7 @@ font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
 modules-left = i3
-modules-center = spotify previous playpause next
+modules-center = networkdown networkup root memory cpu battery temperature
 modules-right = pulseaudio xkeyboard date
 tray-position = none
 tray-padding = 0
@@ -248,26 +248,27 @@ format-warn-underline = ${colors.primary}
 
 [module/xkeyboard]
 type = internal/xkeyboard
-blacklist-0 = num lock
+;blacklist-0 = num lock
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
-label-layout = %layout%
+label-layout = "%layout%"
+label-indicator-on = " %name%"
+label-indicator-off =
 label-layout-underline = ${colors.primary}
-label-indicator-padding = 1
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-on-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
-
+format-spacing = 0
+format = <label-layout><label-indicator>
 
 [module/date]
 type = internal/date
 interval = 1
-date-alt = "%A, %Y-%m-%d "
-time-alt = %H:%M:%S
-time = %H:%M:%S
+date-alt = "%A, %Y-%m-%d"
+time-alt = " %H:%M:%S"
+time = "%H:%M:%S"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-label = %date%%time%
+label = "%date%%time%"
 
 
 [module/pulseaudio]
