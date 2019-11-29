@@ -1,7 +1,8 @@
 #!/bin/sh
 source ~/.cache/wal/colors.sh
+rm /tmp/lock.png
 scrot /tmp/lock.png
-convert -scale 5% -scale 2000% /tmp/lock.png /tmp/lock.png
+convert /tmp/lock.png -scale 5% -scale 2000% /tmp/lock.png
 B=$color2
 B+=22
 C=$color3
@@ -15,7 +16,9 @@ W+=ff
 V=$color12
 V+=ff
 xkb-switch -s us
-i3lock -i /tmp/lock.png \
+# killall compton
+i3lock -n \
+-i /tmp/lock.png      \
 --insidevercolor=$C   \
 --ringvercolor=$V     \
 \
@@ -35,8 +38,9 @@ i3lock -i /tmp/lock.png \
 --keyhlcolor=$W       \
 --bshlcolor=$W        \
 \
---screen 1            \
+--keylayout 2         \
 --clock               \
 --indicator           \
 --timestr="%H:%M:%S"  \
---datestr="%A, %d-%m-%Y" \
+--datestr="%A, %d %m %Y"
+# compton -b

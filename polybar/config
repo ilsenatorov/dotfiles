@@ -26,7 +26,7 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 ping-pi LFB LDB
+modules-left = i3 LFB LDB
 modules-center = networkdown networkup card root memory cpu battery temperature
 modules-right = backlight pulseaudio xkeyboard date
 tray-position = none
@@ -51,8 +51,8 @@ font-0 = Hack Nerd Font:size=11
 font-1 = Weather Icons:size=11;1
 font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
-modules-left = i3 ping-pi LFB LDB
-modules-center = networkdown networkup card root memory cpu battery temperature
+modules-left = i3
+modules-center = networkdown networkup card2 root2 memory2 cpu
 modules-right = xkeyboard date pulseaudio
 tray-position = none
 tray-padding = 0
@@ -108,32 +108,6 @@ click-right = ~/dotfiles/backup/documents_backup.sh &
 format-underline = ${colors.primary}
 
 
-[module/weather]
-type = custom/script
-exec = ~/dotfiles/polybar/openweathermap.sh
-interval = 600
-label-font = 3
-format-underline = ${colors.primary}
-click-left = xdg-open https://duckduckgo.com/?q=weather &
-
-
-[module/ping-pi]
-type = custom/script
-exec = ~/dotfiles/polybar/ping-pi.sh
-interval = 10
-label = %output%
-format-underline = ${colors.primary}
-click-left = termite -e "ssh pi"
-
-
-[module/gmail]
-type = custom/script
-exec = ~/dotfiles/polybar/gmail/launch.py -ns -u
-tail = true
-click-left = xdg-open https://mail.google.com &
-label-underline = ${colors.primary}
-
-
 ;;;;;;;;;;;;;;;;;;;;;;CENTER;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -173,12 +147,44 @@ label-mounted =  %percentage_used%%
 format-mounted = <label-mounted>
 format-mounted-underline = ${colors.underline}
 
+[module/card]
+type = internal/fs
+interval = 25
+mount-0 = /mnt/SD
+label-mounted = 💾 %percentage_used%%
+format-mounted = <label-mounted>
+format-mounted-underline = ${colors.underline}
+label-font = 3
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-underline = ${colors.underline}
 label =  %percentage_used%%
+
+[module/root2]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted =  %used%/%total%
+format-mounted = <label-mounted>
+format-mounted-underline = ${colors.underline}
+
+
+[module/memory2]
+type = internal/memory
+interval = 2
+format-underline = ${colors.underline}
+label =  %gb_used%
+
+[module/card2]
+type = internal/fs
+interval = 25
+mount-0 = /mnt/SD
+label-mounted = 💾 %used%/%total%
+format-mounted = <label-mounted>
+format-mounted-underline = ${colors.underline}
+label-font = 3
 
 
 [module/cpu]
@@ -222,14 +228,6 @@ format-warn-underline = ${colors.primary}
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;RIGHT;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-[module/lastfm]
-type = custom/script
-exec = ~/dotfiles/polybar/lastfm.sh
-tail = true
-click-left = kill -USR1 %pid%
-format-underline = ${colors.primary}
 
 
 [module/xkeyboard]
@@ -276,42 +274,6 @@ format-underline = ${colors.primary}
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;UNUSED;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-
-[module/powermenu]
-type = custom/menu
-label-open = " P "
-label-open-foreground = ${colors.foreground}
-label-close = " C "
-label-close-foreground = ${colors.foreground}
-label-separator = " | "
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = termite -e 'sudo reboot'
-menu-2-0 = power off
-menu-2-0-exec = termite -e 'sudo poweroff'
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-format-background = ${colors.secondary}
-
-[module/card]
-type = internal/fs
-interval = 25
-mount-0 = /mnt/SD
-label-mounted = 💾 %percentage_used%%
-format-mounted = <label-mounted>
-
-format-mounted-underline = ${colors.underline}
-label-font = 3
 
 [settings]
 screenchange-reload = true

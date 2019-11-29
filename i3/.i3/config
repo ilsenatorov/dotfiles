@@ -65,8 +65,7 @@ bindsym $mod+Shift+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym --release Shift+Print exec /home/ilya/dotfiles/i3/.i3/scrot.sh
 bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+n exec --no-startup-id networkmanager_dmenu
@@ -276,8 +275,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id /home/ilya/dotfiles/conky/start_small_conky.sh
-#exec --no-startup-id xautolock -corners ---- -time 10 -locker /home/ilya/dotfiles/lock.sh
+# exec --no-startup-id /home/ilya/dotfiles/conky/start_small_conky.sh
+# exec --no-startup-id xautolock -corners ---- -time 10 -locker /home/ilya/dotfiles/lock.sh
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 

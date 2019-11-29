@@ -2,8 +2,7 @@
 source ~/dotfiles/.sensitive
 if [[ $1 == '--home' ]]; then
     IP=$PI_HOME_IP
-    
 else
-    IP=$PI_IP
+    IP=$BACKUP_SERVER
 fi
-rsync -av --delete pi@$IP:/mnt/ftp/storage/Documents /mnt/SD/
+rsync -av --delete $BACKUP_SERVER:~/Documents /mnt/SD/
