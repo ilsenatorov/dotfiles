@@ -20,7 +20,6 @@ alias wal='wal -o /home/ilya/dotfiles/colorchange.sh'
 
 export FONTCONFIG_PATH=/etc/fonts
 export ZSH=/home/ilya/.oh-my-zsh
-export BROWSER=/usr/bin/firefox
 export EDITOR=/usr/bin/vim
 export LANG=/usr/lib/locale/en_GB
 export LC_ALL=en_GB.UTF-8
@@ -34,7 +33,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # miRNA #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:/home/ilya/Projects/miRNA/mirdeep2/bin
+export PATH=$PATH:/home/ilya/bin
 PERL_MB_OPT="--install_base /home/ilya/perl5";export PERL_MB_OPT
 PERL_MM_OPT="INSTALL_BASE=/home/ilya/perl5";export PERL_MM_OPT
 export PERL5LIB=/home/ilya/Projects/miRNA/mirdeep2/lib/perl5

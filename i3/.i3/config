@@ -16,7 +16,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+Shift+u border none
-bindsym $mod+Shidt+y border pixel 1
+bindsym $mod+Shift+y border pixel 1
 bindsym $mod+Shift+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -28,6 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
+
 bindsym $mod+c exec firefox
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -37,9 +38,6 @@ bindsym $mod+z exec --no-startup-id "rofi -show run"
 bindsym $mod+t exec --no-startup-id "rofi -show themes:~/dotfiles/rofi/themeswitch.sh"
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
 bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
-# bindsym $mod+r exec termite -e 'launch_ranger'
-# bindsym $mod+p exec --no-startup-id "/home/ilya/dotfiles/polybar/start_polybar.sh"
-# bindsym $mod+z exec --no-startup-id dmenu_run
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -54,34 +52,11 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Shift+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym --release Shift+Print exec /home/ilya/dotfiles/i3/.i3/scrot.sh
-# exec --no-startup-id xautolock -corners ---- -time 10 -locker /home/ilya/dotfiles/lock.sh
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-
-# focus_follows_mouse no
-
-## Manual management of external displays
-# Set the shortcuts and what they do
-set $mode_display Ext Screen (v) VGA ON, (h) HDMI ON, (x) VGA OFF, (y) HDMI OFF
-mode "$mode_display" {
-    bindsym v exec --no-startup-id xrandr --output VGA1 --auto --right-of LVDS1, mode "default"
-    bindsym h exec --no-startup-id xrandr --output HDMI1 --auto --right-of LVDS1, mode "default"
-    bindsym x exec --no-startup-id xrandr --output VGA1 --auto --off, mode "default"
-    bindsym y exec --no-startup-id xrandr --output HDMI1 --auto --off, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-# Declare here the shortcut to bring the display selection menu
-bindsym $mod+x mode "$mode_display"
-
+bindsym $mod+Shift+x --release exec --no-startup-id xkill
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -92,6 +67,9 @@ bindsym $mod+Right focus right
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # move focused window
 
@@ -130,13 +108,6 @@ bindsym $mod+Shift+s sticky toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple satchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
-
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
@@ -165,7 +136,8 @@ workspace 8 output HDMI-0
 
 workspace_auto_back_and_forth no
 
-bindsym $mod+Tab focus output up
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -276,7 +248,7 @@ bindsym $mod+9 exec --no-startup-id /home/ilya/dotfiles/lock.sh
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id /home/ilya/dotfiles/conky/start_small_conky.sh
@@ -373,8 +345,8 @@ mode "$mode_gaps_outer" {
 exec --no-startup-id "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle'"
 exec --no-startup-id "wal -R -o /home/ilya/dotfiles/keyboard/change_colours.sh"
 exec --no-startup-id "sleep 5; /home/ilya/dotfiles/polybar/start_polybar.sh"
-exec --no-startup-id "compton -b"
+exec --no-startup-id "picom -b"
 exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
-exec --no-startup-id "redshift -P -O 4500; echo 4500 > /home/ilya/dotfiles/polybar/.redshift_temp.log"
+exec --no-startup-id "redshift -P -O 4000; echo 4000 > /home/ilya/dotfiles/polybar/.redshift_temp.log"
 exec --no-startup-id "flashfocus"
 exec --no-startup-id ~/dotfiles/polybar/spotify/launchlistener.sh

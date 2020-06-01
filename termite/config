@@ -7,23 +7,23 @@ scrollback_lines = 10000
 
 
 [colors]
-background = #09090D
-foreground = #8fd2dc
-cursor     = #8fd2dc
+background = #0e1712
+foreground = #77eaf6
+cursor     = #77eaf6
 
-color0  = #09090D
-color1  = #B74D44
-color2  = #4B806D
-color3  = #B8B636
-color4  = #F59E05
-color5  = #F5E105
-color6  = #BA4D9B
-color7  = #8fd2dc
-color8  = #64939a
-color9  = #B74D44
-color10 = #4B806D
-color11 = #B8B636
-color12 = #F59E05
-color13 = #F5E105
-color14 = #BA4D9B
-color15 = #8fd2dc
+color0  = #0e1712
+color1  = #10C922
+color2  = #C8A042
+color3  = #1370AC
+color4  = #9B6799
+color5  = #3C9BBD
+color6  = #1BD6EA
+color7  = #77eaf6
+color8  = #53a3ac
+color9  = #10C922
+color10 = #C8A042
+color11 = #1370AC
+color12 = #9B6799
+color13 = #3C9BBD
+color14 = #1BD6EA
+color15 = #77eaf6
