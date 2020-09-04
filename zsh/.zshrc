@@ -1,11 +1,22 @@
-ZSH_THEME="mod_agnoster"
+POWERLEVEL9K_MODE='awesome-fontconfig'
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status root_indicator background_jobs time)
+POWERLEVEL9K_STATUS_CROSS=true
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=3
+
 
 plugins=(
+  fzf
   git
   autopep8
-  command-not-found
-  npm
   sudo
+  colored-man-pages
+  pip
+  zsh-z
 )
 
 ### Aliases
