@@ -28,7 +28,7 @@ font-2 = Materials Icons:size=11
 font-3 = Symbola:size=12
 font-4 = "Fantasque Sans Mono:pixelsize=10;3"
 font-5 = "Iosevka Nerd Font:pixelsize=13;3"
-modules-left = i3 weather ping-pi LFB LDB
+modules-left = i3 spotify previous playpause next
 modules-center = networkdown networkup root memory cpu battery temperature
 modules-right =  backlight pulseaudio xkeyboard date
 tray-position = none

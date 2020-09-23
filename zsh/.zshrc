@@ -2,7 +2,7 @@ POWERLEVEL9K_MODE='awesome-fontconfig'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status root_indicator background_jobs time)
 POWERLEVEL9K_STATUS_CROSS=true
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
@@ -33,6 +33,7 @@ export ZSH=/home/ilya/.oh-my-zsh
 export EDITOR=/usr/bin/vim
 export LANG=/usr/lib/locale/en_GB
 export LC_ALL=en_GB.UTF-8
+export TERM=xterm-256color
 
 ###Setup
 
