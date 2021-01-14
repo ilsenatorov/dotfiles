@@ -30,6 +30,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 bindsym $mod+c exec =
+bindsym $mod+p exec rofi-pass
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+k kill
@@ -37,7 +38,7 @@ bindsym $mod+Shift+k kill
 bindsym $mod+z exec --no-startup-id "rofi -show run"
 bindsym $mod+t exec --no-startup-id "rofi -show themes:~/dotfiles/rofi/themeswitch.sh"
 bindsym $mod+d exec --no-startup-id "rofi -show drun"
-bindsym $mod+n exec --no-startup-id "/home/ilya/Projects/networkmanager-dmenu/networkmanager_dmenu"
+bindsym $mod+n exec --no-startup-id "networkmanager_dmenu"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -125,10 +126,10 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
-workspace 1 output eDP-1-1
-workspace 2 output eDP-1-1
-workspace 3 output eDP-1-1
-workspace 4 output eDP-1-1
+workspace 1 output eDP1
+workspace 2 output eDP1
+workspace 3 output eDP1
+workspace 4 output eDP1
 workspace 5 output HDMI-0
 workspace 6 output HDMI-0
 workspace 7 output HDMI-0
@@ -348,5 +349,4 @@ exec --no-startup-id "sleep 5; /home/ilya/dotfiles/polybar/start_polybar.sh"
 exec --no-startup-id "picom -b"
 exec --no-startup-id "export $BROWSER=/usr/bin/firefox"
 exec --no-startup-id "redshift -P -O 4000; echo 4000 > /home/ilya/dotfiles/polybar/.redshift_temp.log"
-exec --no-startup-id "flashfocus"
-exec --no-startup-id ~/dotfiles/polybar/spotify/launchlistener.sh
+exec --no-startup-id flashfocus

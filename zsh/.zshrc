@@ -38,7 +38,7 @@ export TERM=xterm-256color
 ###Setup
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #(cat ~/.cache/wal/sequences &)
 
 
